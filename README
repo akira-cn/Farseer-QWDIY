@@ -1,13 +1,13 @@
 Farseer QWDIY
 
-¼¯³É nginx+PHP+CodeIgniter+Smarty3+QWrap
-ÍêÈ«ÂÌÉ« Win32 °æ
-ÔËĞĞ farseer.exe
-·ÃÎÊ http://localhost/
+é›†æˆ nginx+PHP+CodeIgniter+Smarty3+QWrap
+å®Œå…¨ç»¿è‰² Win32 ç‰ˆ
+è¿è¡Œ farseer.exe
+è®¿é—® http://localhost/
 http://localhost/demos/withtpl/
 
-ĞŞ¸Ä CodeIgniter Ö§³ÖÈ±Ê¡index.phpºÍindex·½·¨Ãû
-ÈÃ Smarty3 Ö§³ÖÄ£¿é»¯¿ª·¢
+ä¿®æ”¹ CodeIgniter æ”¯æŒç¼ºçœindex.phpå’Œindexæ–¹æ³•å
+è®© Smarty3 æ”¯æŒæ¨¡å—åŒ–å¼€å‘
 
 Farseer
 http://code.google.com/p/gracecode/wiki/Farseer
