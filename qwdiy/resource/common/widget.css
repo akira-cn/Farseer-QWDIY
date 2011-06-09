@@ -1,0 +1,64 @@
+/*************************************************************
+* Recommended Widget
+*************************************************************/
+.cuttxt{overflow: hidden; white-space: nowrap; word-break: keep-all; text-overflow: ellipsis; -o-text-overflow: ellipsis;}
+.recommended-widget .shop-list{zoom:1;position:relative;overflow:hidden;font-size:0;}
+.recommended-widget .shop-list li{zoom:1;position:relative;}
+.recommended-widget .shop-list li.hover{background-color:#eff5f8;}
+.recommended-widget .shop-list-unit{position:relative;zoom:1;padding:1px 0 10px;font-size:12px;font-family:SimSun;}
+.recommended-widget .shop-list-unit .photo{width:60px;height:44px;margin-bottom:-46px;margin-top:11px;margin-left:5px;overflow:hidden;}
+.recommended-widget .shop-list-unit .photo a{width:60px;height:44px;display:table-cell;*display:block;vertical-align: middle;overflow:hidden;text-align:center;}
+.recommended-widget .photo .vam{display:none;*display: inline;*zoom:1;width:0px;height:100%;vertical-align: middle;font:0/0 Arial;background-color:#fff;}
+.recommended-widget .photo img{vertical-align:middle;}
+.recommended-widget .shop-list-unit .title,
+.recommended-widget .shop-list-unit .phone,
+.recommended-widget .shop-list-unit .info{margin-left:70px;line-height:18px;height:18px;width:119px;}
+.recommended-widget .shop-list-unit .title{width:96px;}
+.recommended-widget .shop-list-unit .phone{color:#e2320c;}
+.recommended-widget .shop-list-unit .info{color:#999;}
+.recommended-widget .shop-list-unit .delete{width:8px;height:8px;background:url(images/spr_recommended.png) -64px -62px no-repeat;position:absolute;right:10px;top:15px;*top:13px;cursor:pointer;font-size:0;}
+.recommended-widget .shop-list-unit .delete-hover{background-position:-64px -54px;}
+.recommended-widget .toolbar{height:22px;line-height:22px;}
+.recommended-widget .toolbar .next-group{float:left;display:block;height:22px;line-height:22px;}
+.recommended-widget .toolbar .to-recommended-index{float:right;display:block;height:22px;line-height:22px;}
+.recommended-widget .toolbar .loading-indicator{position:relative;top:3px;float:left;}
+.recommended-widget .delete-tip{background:url(images/widget/spr_recommended.png) 0 -54px no-repeat;width:64px;height:26px;text-align:center;color:#fff;position:absolute;opacity:.7;filter:alpha(opacity=70);}
+.recommended-widget .delete-tip span{line-height:22px;}
+.recommended-widget .shop-detail-popup .shop-detail-container{width:370px;height:215px;overflow:hidden;position:relative;}
+.recommended-widget .shop-detail-popup .shop-info{padding:10px 0 0 14px;}
+.recommended-widget .shop-detail-popup .shop-info .title{font-weight:bold;height:22px;line-height:22px;margin-bottom:8px;width:340px;}
+.recommended-widget .shop-detail-popup .shop-info .photo{width:120px;height:88px;float:left;overflow:hidden;margin-bottom:12px;}
+.recommended-widget .shop-detail-popup .shop-info .photo a{width:120px;height:88px;display:table-cell;*display:block;vertical-align: middle;overflow:hidden;text-align:center;}
+.recommended-widget .shop-detail-popup .shop-info .ad-list,
+.recommended-widget .shop-detail-popup .shop-info .phone{float:left;width:205px;margin-left:14px;}
+.recommended-widget .shop-detail-popup .shop-info .ad-list{margin-top:-5px;}
+.recommended-widget .shop-detail-popup .shop-info .ad-list li{height:22px;line-height:22px;width:196px;padding-left:8px;}
+.recommended-widget .shop-detail-popup .shop-info .ad-list li .dot{font-size:0;width:3px;height:3px;background:url(images/widget/spr_recommended.png) -64px -70px no-repeat;display:block;margin-right:5px;margin:9px 0 -11px -8px;}
+.recommended-widget .shop-detail-popup .shop-info .phone{margin-top:8px;background:url(images/widget/spr_recommended.png) 0 -27px no-repeat;height:26px;line-height:26px;text-indent:28px;color:#e2320c;font-weight:bold;}
+.recommended-widget .shop-detail-popup .shop-info .address,
+.recommended-widget .shop-detail-popup .shop-info .ext-info{clear:both;width:340px;color:#999;height:22px;line-height:22px;}
+.recommended-widget .shop-detail-popup .recommended-reason{width:368px;_width:370px;height:28px;line-height:28px;position:absolute;bottom:0;left:0;text-indent:14px;background:#f3f3f3;color:#666;}
+.recommended-widget .shop-detail-popup .recommended-reason span{color:#999;}
+
+
+.mod-recommended .recommended-widget{position:relative;zoom:1;width:198px;}
+.mod-recommended .recommended-widget .toolbar{padding:0 9px 10px 10px;}
+
+/*panel-t7*/
+.recommended-widget .panel-t7 {position:absolute;z-index:0;zoom:1;top:0;left:-372px;*left:-374px;_left:-376px;width:370px;}
+.recommended-widget .panel-t7 .panel-content {zoom:1;position:relative;z-index:2;border:1px solid #6fa6c0;background-color:#ffffff;}
+
+.recommended-widget .panel-t7-t .panel-content,
+.recommended-widget .panel-t7-l .panel-content{*filter: progid:DXImageTransform.Microsoft.Shadow(color='#bebebe', Direction=15, Strength=2);-moz-box-shadow:1px 1px 2px #bebebe;-webkit-box-shadow:1px 1px 2px #bebebe;box-shadow:1px 1px 2px #bebebe;}
+
+.recommended-widget .panel-t7-b .panel-content,
+.recommended-widget .panel-t7-r .panel-content{*filter: progid:DXImageTransform.Microsoft.Shadow(color='#bebebe', Direction=225, Strength=2);-moz-box-shadow:-1px 1px 2px #bebebe;-webkit-box-shadow:-1px 1px 2px #bebebe;box-shadow:-1px 1px 2px #bebebe;}
+
+.recommended-widget .panel-t7 .close {width:10px;height:10px;display:block;overflow:hidden;text-indent:-9999px;background:url(images/panel/bg_act_close2.png) no-repeat;position:absolute;top:9px;right:9px;}
+.recommended-widget .panel-t7 .panel-content .hd h3 {font-weight:bold;font-size:12px;padding:7px 8px;}
+
+.recommended-widget .panel-t7-t .cue,.panel-t7-b .cue,.panel-t7-l .cue,.panel-t7-r .cue {width:12px;height:8px;background:url(images/panel/sprites_cue2.png) 0 0 no-repeat;position:absolute;z-index:5;}
+.recommended-widget .panel-t7-t .cue {background-position:0 0;left:20px;top:-7px;}
+.recommended-widget .panel-t7-b .cue {background-position:-22px 0;left:20px;bottom:-7px;_bottom:-14px;}
+.recommended-widget .panel-t7-l .cue {width:8px;height:12px;background-position:-62px 0;left:-7px;top:20px;}
+.recommended-widget .panel-t7-r .cue {width:9px;height:17px;background-position:-72px -54px;background-image:url(images/widget/spr_recommended.png);right:-8px;*right:-10px;_right:-8px;top:20px;}

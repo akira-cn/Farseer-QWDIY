@@ -1,0 +1,38 @@
+# vim: set et sw=4 ts=4 sts=4 fdm=marker ff=unix fenc=utf8 nobomb filetype=conf:
+#
+# Nginx 主配置文件
+#
+# @author mingcheng<i.feelinglucky#gmail.com>
+# @date   2009-05-26
+# @link   http://www.gracecode.com/
+
+worker_processes 1;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    include mime.types;
+    default_type text/html;
+
+    server {
+        set $htdocs D:\workspace\dev\lsphp; # 设定 [DOCUMENT_ROOT] 为 HTTP 服务器根目录
+
+        listen 80;
+        server_name farseer;
+
+        location / {
+            root $htdocs;
+            autoindex on;
+            index index.php index.html;
+        }
+
+        location ~ \.php$ {
+            include fastcgi_params;
+            fastcgi_index index.php;
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_param SCRIPT_FILENAME $htdocs$fastcgi_script_name;
+        }
+    }
+}

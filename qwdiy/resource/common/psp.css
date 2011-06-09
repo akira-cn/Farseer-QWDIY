@@ -1,0 +1,165 @@
+.pass-form p label,#reg_lockmobile_vcode_wrap li label{display:inline-block;width:100px;}
+#reg_wrap .pass-wrapper .pass-form .pass-form-wapper-lockphone .pass-securemobile label,#reg_wrap .pass-wrapper .pass-form .pass-form-wapper-lockphone .pass-password label{ width:100px;}
+p.pass-mem_pass label{width:auto;}
+.pass-server-error {color:red; margin-top:-21px;}
+.pass-safe-trigger{color:#0045DF;}
+.pass-safe-trigger .selected{color:#333;}
+#reg_nav  .selected{color:blue;font-weight:bold;}
+#reg_nav  li{ width:33.3%; display:inline-block;height:22px;  text-align:center;*float:left;}
+#reg_nav.step1 .step1,#reg_nav.step2 .step2,#reg_nav.step3 .step3{ font-size:12px; line-height:22px; font-weight:bolder;}
+#reg_nav.step1 .step2,#reg_nav.step1 .step3,#reg_nav.step2 .step1,#reg_nav.step2 .step3,#reg_nav.step3 .step1,#reg_nav.step3 .step2{ color:#999; font-size:12px; line-height:22px; font-weight:bolder;}
+#reg_nav.step1 .step1,#reg_nav.step2 .step2{ background:#dff4bc url( images/trangle.png) no-repeat scroll 292px 0; }
+#reg_nav.step1 .step2,#reg_nav.step3 .step1{background:#d9d9d9 url( images/trangle2.png) no-repeat scroll 291px 0;}
+#reg_nav.step1 .step3,#reg_nav.step2 .step3{ background:#d9d9d9;}
+#reg_nav.step2 .step1,#reg_nav.step3 .step2{  background:#d9d9d9 url( images/trangle3.png) no-repeat scroll 291px 0;}
+#reg_nav.step3 .step3{background:#dff4bc;}
+.pass-form fieldset{  margin-left:98px; width:755px;}
+.pass-form legend{ font-size:16px; font-weight:bold; padding:7px 0 7px 28px;background:url(images/ver_icon.png) no-repeat  scroll 10px 15px; color: #333;font-family: "Microsoft YaHei","STHeiti Light",Arial,serif}
+.pass-form-wapper-reg .pass-sex{ border-bottom:1px solid #e3e3e3;}
+#reg_reg_wrap #reg_reg_wrap_inner .vefiry_info_title div{font-size:14px; font-weight:bold; padding:20px 0  0 28px;background:url(images/ver_icon.png) no-repeat  scroll 10px 26px; margin-top:-1px; padding-bottom:11px; }
+ 
+.pass-form-wapper-reg p,.pass-form-wapper-lockphone p,.pass-form-wapper-lockmail p{ border-top:1px solid #e3e3e3; padding:10px 10px 10px 30px; }
+#reg_reg_wrap .pass-server-error,.pass-form-wapper-lockphone .pass-server-error,.pass-form-wapper-lockmail .pass-server-error{ border:none;}
+.pass-note-failed{  padding-left:10px;color:red;}
+.pass-verifycode .pass-note-failed{ float:right; margin:-26px 343px 0 0 ;}
+#reg_reg_wrap  .pass-desc{ padding-left:40px; color:#999; font-size:12px;}
+#reg_reg_wrap .pass-email .pass-valid-note{ padding-left:10px;}
+#reg_reg_wrap .pass-verifycode { border-bottom:1px solid #e3e3e3; height:75px; overflow:hidden;}
+#reg_reg_wrap .pass-verifycode img{ display:block; margin:10px 100px;}
+#reg_reg_wrap .pass-verifycode a{ text-decoration:underline; float:right;margin-right:436px;margin-top:-25px;}
+.pass-submit {margin:0 auto;text-align:center;  }
+#PassFormreg .pass-submit button{ background:url(images/register.png) no-repeat ; height:33px; width:147px; cursor:pointer; border:none;}
+#PassFormreg .pass-submit  span{ display:none;}
+.pass-agree-area{ margin:0 auto; text-align:center; padding-top:20px; font-size:12px;}
+#PassRegAgree{ width:680px; font-size:12px;height:60px;}
+#reg_nav.step2{ position:relative; background: url(images/line-info2.png); height:22px;}
+#PassFormlockphone .pass-securemobile,.pass-securemail{ border-bottom:1px solid #e3e3e3;}
+ .pass-submit{ padding-top:15px;}
+.bd .panel-reg #reg_lockmobile_wrap .pass-form-wapper-lockphone  p label{ width:100px;}
+
+/* mobile*/
+#reg_lockmobile_vcode_wrap h2,#reg_lockmail_msg h2,#reg_lockmobile_wrap_inner h2,#reg_lockmail_wrap_inner h2{ background:#feffea url(images/tip.png) no-repeat scroll 28px 9px; height:30px; line-height:30px; margin:15px 5px 5px 5px;  border:1px solid #ffe067; padding-left:55px;}
+#reg_lockmobile_vcode_wrap h2 strong,#reg_lockmail_msg h2 strong,#reg_lockmobile_wrap_inner strong,#reg_lockmail_wrap_inner strong{ color:#ff0000;}
+#reg_lockmobile_vcode_wrap ul,#reg_lockmail_msg ul{ padding-top:20px; width:800px; margin:0 auto;}
+#reg_lockmobile_vcode_wrap li,#reg_lockmail_msg li{ border-top:1px solid #e3e3e3;  padding:10px; }
+#reg_lockmobile_vcode_wrap li a,#reg_lockmail_msg li a {  text-decoration:underline;}
+#reg_lockmobile_vcode_wrap .step2 span ,#reg_lockmail_msg .span{ padding-left:10px; color:#666;}
+#reg_lockmobile_vcode_wrap .step3{ text-align:center; color:#666}
+#reg_lockmail_msg li strong{ font-weight:bolder;}
+#reg_lockmail_msg li span{ padding-left:44px; color:#666;}
+#jump_to_my_email{ background:url(images/email.png) no-repeat scroll 0 0; width:82px; height:23px; display:inline-block; vertical-align:middle; margin-left:10px; }
+.lockmail_done{ margin:0 auto; text-align:center; padding-bottom:8px;}
+
+/*panel*/
+.panel-reg #reg_nav{ display:none;}
+.panel-reg #reg_reg_wrap #reg_reg_wrap_inner .vefiry_info_title div{ padding-left:-28px; background:transparent url(images/ver_icon.png) no-repeat scroll 1px 13px; padding:5px 0 0 19px;}
+.panel-reg .pass-form-wapper-reg p{ padding:6px 10px 10px 15px;}
+.panel-reg #reg_reg_wrap_outer .pass-form fieldset{ padding-left:10px; width:630px;margin-left:0px;}
+.panel-reg .pass-form p label{ width:100px;}
+.panel-reg  #reg_reg_wrap  .pass-desc{ margin-left:-23px;}
+.panel-reg .pass-form-wapper-reg{ width:630px;}
+.panel-reg #PassRegAgree { width:500px; padding-top:8px; margin-bottom:8px; font-size:12px;color:#999999;}
+.panel-reg #reg_reg_wrap .pass-verifycode img { margin-left:100px;}
+.panel-reg #reg_reg_wrap .pass-verifycode a { margin-right:329px;}
+.panel-reg #reg_reg_wrap .pass-verifycode{ height:70px;}
+.panel-reg .pass-submit{ padding-top:8px; padding-bottom:8px;}
+.panel-reg  .pass-verifycode .pass-note-failed{ float:right; margin:-26px 218px 0 0 ;*margin:-26px -250px 0px 70px}
+.panel-content .reg_reg_wrap_outer  .pass-form legend{ background: transparent url(images/ver_icon.png) no-repeat scroll 10px 14px}
+.panel-content .reg_reg_wrap_outer  .pass-form .youa-login-help{color:#000000;float:right;font-size:13px;font-weight:bold;margin:30px 20px 0;}
+#reg_lockmobile_wrap .panel-reg .pass-form fieldset{ width:543px;}
+#reg_lockmobile_wrap .panel-reg .pass-form p label{ width:100px;}
+
+.panel-reg #reg_lockmobile_wrap  label{ width:100px; }
+.panel-reg #reg_lockmobile_wrap #reg_lockmobile_vcode_wrap li.step1 strong{ padding-right:90px; font-weight:bolder;font-size:15px;}
+.panel-reg  .pass-form fieldset{  width:530px; margin-left:5px;}
+.panel-reg #reg_lockmobile_vcode_wrap ul,.panel-reg #reg_lockmail_msg ul{ width:530px;}
+.panel-reg #reg_lockmobile_wrap_inner h2,.panel-reg #reg_lockmail_wrap_inner h2{ margin:10px 5px 0;}
+.panel-reg #reg_lockmail_msg step3 span{ padding-left:15px;}
+
+/*login*/
+#bd .log-reg #login_wrap{  float:left; width:456px; margin-bottom:20px; background:#fafafa;}
+#bd .log-reg #login_wrap .pass-wrapper{ border:solid 4px #e0efcb;border-bottom:none; min-height:199px;_height:199px;}
+.log-reg #login_wrap .pass-verifycode img{ float:right;margin:10px 123px 0;}
+
+.log-reg #login_wrap .pass-submit{width:200px;padding:10px 0 10px 83px;_padding-left:170px;zoom:1;clear: both;}
+.log-reg #login_wrap .pass-submit button{vertical-align: bottom; _height: 16px;}
+.log-reg #login_wrap .pass-submit a{ padding:10px 12px 0px 12px;zoom:1; }
+.log-reg #login_wrap .pass-verifycode a{float:right;margin:-17px 60px 0 0;}
+#bd .log-reg #login_wrap #PassMem_pass0{ display:none;}
+#bd .log-reg .register{ width:460px; height:249px; float:right; border:solid 1px #e0efcb;}
+.log-reg .cls .x1,.cls .x1a,.cls .x2,.cls .x2a{ height:2px; display:block; position:relative; background: url(images/quick_bg.png) no-repeat scroll 0 0;overflow:hidden;}
+.log-reg .cls .x1{ background-position:left 0;margin:-1px -1px 0 -1px;}
+.log-reg .cls .x1a{ background-position:-1px 0; width:2px; float:right; margin-left:-1px;}
+.log-reg .cls .x2{ background-position:0 -1px; margin:0px -1px -1px -1px;  clear:both; } 
+.log-reg .cls .x2a{ background-position:-1px -1px; float:right;  margin-left:-1px; width:2px;}
+#bd .log-reg .title h3{line-height:24px; font-size:16px; font-weight:600; padding:18px 0 7px 50px; font-family: "Microsoft YaHei","STHeiti Light",Arial,serif;color:#333;}
+.log-reg .register #yschool{ width:390px; border-top:solid 2px #e0efcb; display: block; margin:0 auto; padding-top:5px;*padding-top:16px;}
+.log-reg .register #yschool .plink {margin-top:20px;padding:3px 0 5px 7px;  }
+.log-reg .register #yschool .plink li {margin:5px 17px 13px 0;*margin:3px 10px 11px 0;height:18px;/* _margin-left :-15px;*/float:left;}
+.log-reg .register #yschool .plink li span {color:#666;line-height:18px;background:url(http://co.youa.baidu.com/picture/r/mall/hp090617/images/sprites_hp_xb.png) 0 -300px no-repeat;padding-left:30px;float:left;}
+.log-reg .register #yschool .plink li span a{ font-size:12px; color:#4e4e4e;}
+.log-reg .register #yschool .plink li.s1 {margin-top:2px;overflow:hidden;text-align:center;height:20px;margin-left:-7px;}
+.log-reg .register #yschool .plink li.s1 a {color:#ff7e00;background:none;padding-left:0;}
+.log-reg .register #yschool .plink li.s2 span {background-position:3px -300px;}
+.log-reg .register #yschool .plink li.s3 span {background-position:0 -350px;}
+.log-reg .register #yschool .plink li.s4 span {background-position:0 -400px;}
+.log-reg .register #yschool .plink li.s5 span {background-position:0 -450px;}
+.log-reg .register #yschool .psc {padding-bottom:3px;}
+.log-reg .register #yschool .psc li {float:left;margin-left:3px;display:inline;} 
+.log-reg .register #yschool .psc li a {float:left;width:57px;height:26px;background:url(http://co.youa.baidu.com/picture/r/mall/hp090617/images/sprites_hp2.png) no-repeat;}
+.log-reg .register #yschool .psc li.s1 a {background-position:0 0;}
+.log-reg .register #yschool .psc li.s2 a {background-position:0 -50px;}
+.log-reg .register #yschool .psc li.s3 a {width:65px;background-position:0 -100px;}
+#bd .log-reg .reg-button{ margin-left:166px;*padding-top:15px; height:91px;*height:100px;}
+#bd .log-reg .reg-button span{ background: url(images/quick_bg.png) no-repeat scroll 0 -2px; width:119px; height:37px; position:absolute; margin-left:-56px;*margin-top:-1px;}
+#bd  .psp-nav{ background:url(images/quick_bg.png) no-repeat scroll 0 -39px; height:29px; line-height:29px; margin-bottom:10px; padding-left:10px;}
+.log-reg .pass-form fieldset{ text-align:center; width:auto; margin:auto;}
+#login_wrap fieldset a.youa-login-help{color:#000000;float:right;font-size:13px;font-weight:bold;margin:-15px 20px 0;}
+#login_wrap legend{ padding:18px 0 7px 50px; background:none; }
+#login_wrap .pass-form-wapper-login{ width:400px;border-top:solid 2px #e0efcb; float:left; margin-left:25px;_margin-left:15px;padding-top:12px;}
+#login_wrap .pass-form-wapper-login object{ margin:-2px -1px -5px -1px;}
+#login_wrap .pass-form-wapper-login .safeModPsp_err{width:140px;}
+  .sc-ns{width:153px;margin:-2px 0 -2px 0}
+#login_wrap .pass-form-wapper-login .pass-server-error{ margin:0;}
+#login_wrap .pass-form-wapper-login p{ padding-top:10px; }
+#login_wrap .pass-mem_pass{ display:none;}
+#login_wrap .pass-form-wapper-login p label{ color:#666; text-align:left; width:68px;}
+#login_wrap .pass-safeflg object{ width:155px;}
+.log-reg .pass-form fieldset button,
+.panel-login .pass-form  fieldset button{ border:none; background:url(images/psp-login.png) no-repeat; height:30px; width:90px; padding:0;}
+.log-reg .pass-form fieldset button span,.panel-login  .pass-form fieldset button span{ display:none;}
+.panel-login #login_wrap .pass-safe-trigger{ padding-left:20px; margin-top:5px;_margin-top:0; padding-bottom:5px; display:none; }
+#login_wrap .pass-safe-trigger{border-top:solid 4px #e0efcb; background-color:#FFF;_width:456px;}
+#login_wrap .pass-safe-trigger li{display:inline-block;cursor:pointer; *display:inline;text-align:center;width:185px;margin-top:-4px;zoom:1;position:relative;_margin-right:-4px;}
+#login_wrap .pass-safe-trigger li b{ height:43px; line-height:43px;display: block;width:130px; margin:auto; }
+#login_wrap .pass-safe-trigger #PassLoginHideSafe{ border-left:#E0EFCB solid 1px;border-bottom:#E0EFCB solid 1px; height:41px;border-top:#E0EFCB solid 4px; float:left; background:#FFF;}
+#login_wrap .pass-safe-trigger #PassLoginHideSafe.selected{ border:solid 4px #e0efcb; border-top:none; background:#FAFAFA; float:left; height:43px;zoom:1;}
+#login_wrap .pass-safe-trigger .selected b{  border-top:#F3F7E9 solid 2px;_margin-bottom: -1px;}
+#login_wrap .pass-safe-trigger #PassLoginShowSafe span{display: block;margin:-32px 0 0 70px; *margin:-33px 0 0 70px; }
+#login_wrap .pass-safe-trigger #PassLoginShowSafe.selected{ border:solid 4px #e0efcb; border-top:none;background-color:#FAFAFA ;}
+#login_wrap .pass-safe-trigger #PassLoginShowSafe{ border-color:#E0EFCB;border-style:solid;border-width:4px 1px 1px 4px;background:#fff url(images/safelogin.png) no-repeat scroll 45px 13px ; height:42px; border-left:none;}
+.panel-login .panel-login-wide-bd #login_wrap fieldset{ margin:0; width:300px;border-left:1px solid #C5C5C5;} 
+.panel-login #login_wrap fieldset{ margin:0; width:300px; margin-bottom:8px;} 
+.panel-login #login_wrap .pass-form-wapper-login{ width:290px; text-align:center;}
+.panel-login #login_wrap{padding-left:5px;width:330px; zoom:1; min-height:100px; *float:left;}
+.panel-login #login_wrap legend{padding:9px 0 9px 15px; }
+.panel-login .panel-login-bd{ min-height:165px;_ height:185px;} 
+.panel-login #login_udf_div{width:240px;float:left;}
+.panel-login .panel-login-bd  .msg4NewUser h3{font-family:"Microsoft YaHei","STHeiti Light",Arial,serif;color:#333333;font-size:16px;font-weight:600;margin-top:9px;margin-bottom:9px;}
+.panel-login .panel-login-bd  .msg4NewUser p{line-height:22px;}
+.panel-login .panel-login-bd  .left .bg{background:transparent url(images/quick_bg.png) no-repeat scroll -816px -2px;display:block;margin-left:18px;width:145px; height:37px; }
+.panel-login .panel-login-bd  .left li{ float:left;}
+.panel-login .panel-login-bd  .left ul{ height:40px; line-height:55px;}
+.panel-login .panel-login-bd  .left li a{ text-decoration:underline;}
+.panel-login .panel-login-bd .left li span{ display:none;}
+.panel-login  #login_wrap .pass-verifycode img{ float:right;margin:10px 66px 0;}
+.panel-login  #login_wrap .pass-verifycode a{ float:right;margin:-17px 8px 0 0;*margin:-15px 8px 0px 100px;}
+.panel-login  #login_wrap .pass-submit{clear:both;padding:10px 0 10px 126px;_padding-left:132px;zoom:1;text-align:left;}
+.panel-login  #login_wrap .pass-submit button{vertical-align: bottom; _height: 16px;}
+.panel-login  #login_wrap .pass-submit a{padding:10px 12px 0px 12px;zoom:1}
+.panel-login #user_register_ctn{}
+.panel-login #user_register_ctn h4{border-top:2px solid #E0EFCB;float:left;margin-left:32px;padding-top:10px;width:290px;*margin-top:10px;_margin-left:20px;}
+.panel-login #user_register_ctn button{margin-left:100px;margin-top:20px;width:180px;}
+.panel-reg #reg_lockmail_wrap #reg_lockmail_msg b{ font-weight:bolder; color:red;}
+.panel-reg #reg_lockmail_msg li span{ padding-left:13px;}
+#reg_lockmobile_vcode_wrap li.step4{ text-align:center;}

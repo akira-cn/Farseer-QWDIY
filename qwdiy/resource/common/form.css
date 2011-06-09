@@ -1,0 +1,29 @@
+/*
+Copyright (c) 2009, Baidu Inc. All rights reserved.
+version: 2.0.0.0
+*/
+/**
+ * BBlib Form
+ * @module form
+ * @namespace
+ * @requires not request
+ * @example
+<form action="" method="get" class="form">
+	<ul>
+		<li><label class="k" for="a1"><span class="em">*</span> 姓名：</label><span class="v"><input type="text" id="a1" name="name"> <em>提示文字</em></span></li>
+	</ul>
+	<div class="btn">
+		<input type="submit" value="提交"> <a href="#">取消</a>
+	</div>
+</form>
+ */
+
+/* form */
+.form {zoom:1;}
+.form ul {}
+.form ul li {clear:both;margin-bottom:13px;zoom:1;}
+.form ul li:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.form ul .k {display: inline-block;*display: inline;*zoom:1;margin-right:4px;text-align:right;}
+.form ul .v {margin-right:20px;}
+.form ul .v input {}
+.form ul em {color:#666;}

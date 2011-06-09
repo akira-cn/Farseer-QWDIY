@@ -1,0 +1,16 @@
+.share-container a{height:16px;width:16px; background:no-repeat url(images/shareto_icon.png);float:left;margin-top:1px;border:none;text-decoration:none;margin-right:5px;}
+.share-container .share-button-renren{background-position:0px 0px;}
+.share-container .shareto-button-tsina{background-position:0px -18px;}
+.share-container .shareto-button-itieba{background-position:0px -36px;}
+.share-container .shareto-button-tqq{background-position:0px -54px;}
+.share-container .shareto-button-kaixin001{background-position:0px -72px;}
+.share-container .shareto-button-douban{background-position:0px -90px;}
+.share-container .shareto-button-copyurl{background-position:0px -108px;}
+.share-container .shareto-button-hi{background-position:0px -126px;}
+.share-container .shareto-button-t163{background-position:0px -144px;}
+.share-container .shareto-button-tsohu{background-position:0px -162px;}
+.share-container .shareto-button-taojianghu{background-position:0px -180px;}
+.share-container .shareto-button-baishehui{background-position:0px -198px;}
+.share-container .shareto-button-qzone{background-position:0px -216px;}
+.share-container .shareto-button-qfriend{background-position:0px -234px;}
+.share-container .shareto-button-email{background-position:0px -252px;}

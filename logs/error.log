@@ -1,0 +1,138 @@
+2011/06/07 18:10:27 [error] 11092#10408: *1 CreateFile() "D:/workspace/dev/lsphp/testsmarty" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: farseer, request: "GET /testsmarty HTTP/1.1", host: "localhost"
+2011/06/07 18:10:39 [error] 11092#10408: *1 CreateFile() "D:/workspace/dev/lsphp/smartytest" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: farseer, request: "GET /smartytest HTTP/1.1", host: "localhost"
+2011/06/07 18:10:46 [error] 11092#10408: *1 CreateFile() "D:/workspace/dev/lsphp/index.php/smartytest" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: farseer, request: "GET /index.php/smartytest HTTP/1.1", host: "localhost"
+2011/06/07 18:11:01 [error] 11092#10408: *1 CreateFile() "D:/workspace/dev/lsphp/index.php/welcome" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: farseer, request: "GET /index.php/welcome HTTP/1.1", host: "localhost"
+2011/06/07 18:11:04 [error] 11092#10408: *1 "D:/workspace/dev/lsphp/index.php/index.php" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: farseer, request: "GET /index.php/ HTTP/1.1", host: "localhost"
+2011/06/07 18:11:24 [error] 11092#10408: *11 CreateFile() "D:/workspace/dev/lsphp/welcome" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: farseer, request: "GET /welcome HTTP/1.1", host: "lsphp"
+2011/06/07 18:11:25 [error] 11092#10408: *11 CreateFile() "D:/workspace/dev/lsphp/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: farseer, request: "GET /favicon.ico HTTP/1.1", host: "lsphp"
+2011/06/07 18:11:54 [error] 11092#10408: *1 CreateFile() "D:/workspace/dev/lsphp/index.php/hello" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: farseer, request: "GET /index.php/hello HTTP/1.1", host: "localhost"
+2011/06/07 18:13:44 [error] 11092#10408: *17 CreateFile() "D:/workspace/dev/lsphp/index.php/hello" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: farseer, request: "GET /index.php/hello HTTP/1.1", host: "localhost"
+2011/06/07 18:17:40 [notice] 3960#5284: signal process started
+2011/06/07 18:17:40 [error] 3960#5284: OpenEvent("ngx_stop_4412") failed (2: The system cannot find the file specified)
+2011/06/07 18:22:37 [emerg] 7444#12400: unknown directive "<--" in D:\workspace\dev\Farseer/conf/nginx.conf:34
+2011/06/07 18:22:40 [emerg] 2508#2028: unknown directive "<--" in D:\workspace\dev\Farseer/conf/nginx.conf:34
+2011/06/07 18:22:41 [emerg] 11116#9720: unknown directive "<--" in D:\workspace\dev\Farseer/conf/nginx.conf:34
+2011/06/07 18:23:14 [emerg] 12892#12648: unknown directive "<--" in D:\workspace\dev\Farseer/conf/nginx.conf:34
+2011/06/07 18:23:47 [error] 9912#4252: *1 CreateFile() "D:/workspace/dev/lsphp/hello" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: farseer, request: "GET /hello HTTP/1.1", host: "localhost"
+2011/06/07 18:23:53 [error] 9912#4252: *1 CreateFile() "D:/workspace/dev/lsphp/index.php/hello" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: farseer, request: "GET /index.php/hello HTTP/1.1", host: "localhost"
+2011/06/07 18:25:00 [emerg] 12352#5032: unknown "path_info" variable
+2011/06/07 18:25:03 [emerg] 11004#14280: unknown "path_info" variable
+2011/06/07 18:25:04 [emerg] 14196#536: unknown "path_info" variable
+2011/06/07 18:27:30 [notice] 12436#13624: signal process started
+2011/06/07 18:27:30 [error] 12436#13624: OpenEvent("ngx_stop_11688") failed (2: The system cannot find the file specified)
+2011/06/07 18:28:06 [error] 11268#13200: *1 CreateFile() "D:\workspace\dev\lsphp/hello.php/akira" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: farseer, request: "GET /hello.php/akira HTTP/1.1", host: "localhost"
+2011/06/07 18:28:26 [error] 11268#13200: *1 CreateFile() "D:\workspace\dev\lsphp/welcome" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: farseer, request: "GET /welcome HTTP/1.1", host: "localhost"
+2011/06/07 18:31:38 [emerg] 5032#12648: CreateFile() "D:\workspace\dev\Farseer/conf/fcgi.conf" failed (2: The system cannot find the file specified) in D:\workspace\dev\Farseer/conf/nginx.conf:33
+2011/06/07 18:31:38 [emerg] 6352#13232: CreateFile() "D:\workspace\dev\Farseer/conf/fcgi.conf" failed (2: The system cannot find the file specified) in D:\workspace\dev\Farseer/conf/nginx.conf:33
+2011/06/07 18:32:31 [notice] 4384#4264: signal process started
+2011/06/07 18:32:31 [error] 4384#4264: OpenEvent("ngx_stop_8388") failed (2: The system cannot find the file specified)
+2011/06/07 18:33:44 [notice] 10432#14248: signal process started
+2011/06/07 18:33:44 [error] 10432#14248: OpenEvent("ngx_stop_13908") failed (2: The system cannot find the file specified)
+2011/06/07 18:37:13 [notice] 2532#9360: signal process started
+2011/06/07 18:37:13 [error] 2532#9360: OpenEvent("ngx_stop_13308") failed (2: The system cannot find the file specified)
+2011/06/07 18:38:04 [notice] 11612#10580: signal process started
+2011/06/07 18:38:04 [error] 11612#10580: OpenEvent("ngx_stop_14012") failed (2: The system cannot find the file specified)
+2011/06/07 18:38:21 [error] 13248#13304: *1 CreateFile() "D:\workspace\dev\lsphp/index.php/hello" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: farseer, request: "GET /index.php/hello HTTP/1.1", host: "localhost"
+2011/06/07 18:41:27 [emerg] 10344#11564: pcre_compile() failed: unmatched parentheses in "（resourcs|robots\.txt|index\.php.*)" at ")" in D:\workspace\dev\Farseer/conf/nginx.conf:30
+2011/06/07 18:41:27 [emerg] 14096#8232: pcre_compile() failed: unmatched parentheses in "（resourcs|robots\.txt|index\.php.*)" at ")" in D:\workspace\dev\Farseer/conf/nginx.conf:30
+2011/06/07 18:42:18 [emerg] 2684#9356: pcre_compile() failed: unmatched parentheses in "（resourcs|robots\.txt|index\.php.*)" at ")" in D:\workspace\dev\Farseer/conf/nginx.conf:30
+2011/06/07 18:42:18 [emerg] 12348#12808: pcre_compile() failed: unmatched parentheses in "（resourcs|robots\.txt|index\.php.*)" at ")" in D:\workspace\dev\Farseer/conf/nginx.conf:30
+2011/06/07 18:43:02 [emerg] 13092#3180: pcre_compile() failed: unmatched parentheses in "（resourcs|robots\.txt|index\.php.*)" at ")" in D:\workspace\dev\Farseer/conf/nginx.conf:30
+2011/06/07 18:43:03 [emerg] 10796#8672: pcre_compile() failed: unmatched parentheses in "（resourcs|robots\.txt|index\.php.*)" at ")" in D:\workspace\dev\Farseer/conf/nginx.conf:30
+2011/06/07 18:43:42 [emerg] 13292#14012: pcre_compile() failed: unmatched parentheses in "（resourcs|robots\.txt|index\.php.*)" at ")" in D:\workspace\dev\Farseer/conf/nginx.conf:30
+2011/06/07 18:43:43 [emerg] 8376#12600: pcre_compile() failed: unmatched parentheses in "（resourcs|robots\.txt|index\.php.*)" at ")" in D:\workspace\dev\Farseer/conf/nginx.conf:30
+2011/06/07 18:44:48 [notice] 13864#13932: signal process started
+2011/06/07 18:44:48 [error] 13864#13932: OpenEvent("ngx_stop_12028") failed (2: The system cannot find the file specified)
+2011/06/07 18:46:09 [notice] 13872#4312: signal process started
+2011/06/07 18:46:09 [error] 13872#4312: OpenEvent("ngx_stop_11268") failed (2: The system cannot find the file specified)
+2011/06/07 18:46:33 [notice] 11576#14228: signal process started
+2011/06/07 18:46:33 [error] 11576#14228: OpenEvent("ngx_stop_13808") failed (2: The system cannot find the file specified)
+2011/06/07 18:48:06 [notice] 5876#5492: signal process started
+2011/06/07 18:48:06 [error] 5876#5492: OpenEvent("ngx_stop_5100") failed (2: The system cannot find the file specified)
+2011/06/07 18:48:17 [error] 12868#7384: *1 rewrite or internal redirection cycle while processing "/index2.php/index2.php/index2.php/index2.php/index2.php/index2.php/index2.php/index2.php/index2.php/index2.php/index2.php/hello", client: 127.0.0.1, server: farseer, request: "GET /hello HTTP/1.1", host: "localhost"
+2011/06/07 18:48:34 [notice] 12704#13400: signal process started
+2011/06/07 18:48:34 [error] 12704#13400: OpenEvent("ngx_stop_13184") failed (2: The system cannot find the file specified)
+2011/06/07 18:50:17 [notice] 10504#13508: signal process started
+2011/06/07 18:50:17 [error] 10504#13508: OpenEvent("ngx_stop_10536") failed (2: The system cannot find the file specified)
+2011/06/07 18:51:52 [notice] 12736#13708: signal process started
+2011/06/07 18:51:52 [error] 12736#13708: OpenEvent("ngx_stop_2680") failed (2: The system cannot find the file specified)
+2011/06/07 18:53:43 [notice] 3556#12868: signal process started
+2011/06/07 18:53:43 [error] 3556#12868: OpenEvent("ngx_stop_13520") failed (2: The system cannot find the file specified)
+2011/06/07 18:57:28 [notice] 13720#10544: signal process started
+2011/06/07 18:57:28 [error] 13720#10544: OpenEvent("ngx_stop_7304") failed (2: The system cannot find the file specified)
+2011/06/07 18:58:29 [notice] 12844#12984: signal process started
+2011/06/07 18:58:29 [error] 12844#12984: OpenEvent("ngx_stop_6600") failed (2: The system cannot find the file specified)
+2011/06/07 18:59:43 [notice] 13864#12772: signal process started
+2011/06/07 18:59:43 [error] 13864#12772: OpenEvent("ngx_stop_812") failed (2: The system cannot find the file specified)
+2011/06/07 19:01:12 [notice] 13644#13172: signal process started
+2011/06/07 19:01:12 [error] 13644#13172: OpenEvent("ngx_stop_7932") failed (2: The system cannot find the file specified)
+2011/06/07 19:06:32 [notice] 13440#1252: signal process started
+2011/06/07 19:06:32 [error] 13440#1252: OpenEvent("ngx_stop_5548") failed (2: The system cannot find the file specified)
+2011/06/07 19:07:22 [notice] 272#13448: signal process started
+2011/06/07 19:07:22 [error] 272#13448: OpenEvent("ngx_stop_12624") failed (2: The system cannot find the file specified)
+2011/06/07 19:08:44 [notice] 13536#10500: signal process started
+2011/06/07 19:08:44 [error] 13536#10500: OpenEvent("ngx_stop_11268") failed (2: The system cannot find the file specified)
+2011/06/07 19:09:54 [notice] 11356#13364: signal process started
+2011/06/07 19:09:54 [error] 11356#13364: OpenEvent("ngx_stop_13500") failed (2: The system cannot find the file specified)
+2011/06/07 19:10:03 [error] 9076#8376: *1 CreateFile() "D:/workspace/dev/lsphp/hello" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: farseer, request: "GET /hello HTTP/1.1", host: "localhost"
+2011/06/07 19:10:10 [notice] 812#2648: signal process started
+2011/06/07 19:10:10 [error] 812#2648: OpenEvent("ngx_stop_10236") failed (2: The system cannot find the file specified)
+2011/06/07 19:11:22 [notice] 13700#5476: signal process started
+2011/06/07 19:11:22 [error] 13700#5476: OpenEvent("ngx_stop_12908") failed (2: The system cannot find the file specified)
+2011/06/07 19:12:51 [notice] 12452#13972: signal process started
+2011/06/07 19:12:51 [error] 12452#13972: OpenEvent("ngx_stop_7744") failed (2: The system cannot find the file specified)
+2011/06/07 19:13:26 [notice] 13184#4672: signal process started
+2011/06/07 19:13:26 [error] 13184#4672: OpenEvent("ngx_stop_14096") failed (2: The system cannot find the file specified)
+2011/06/07 19:17:20 [notice] 13356#2648: signal process started
+2011/06/07 19:17:20 [error] 13356#2648: OpenEvent("ngx_stop_7420") failed (2: The system cannot find the file specified)
+2011/06/08 09:17:17 [notice] 3704#3708: signal process started
+2011/06/08 09:17:17 [error] 3704#3708: OpenEvent("ngx_stop_5796") failed (2: The system cannot find the file specified)
+2011/06/08 09:21:54 [notice] 4440#4532: signal process started
+2011/06/08 09:21:54 [error] 4440#4532: OpenEvent("ngx_stop_3020") failed (2: The system cannot find the file specified)
+2011/06/08 09:45:29 [warn] 5836#5132: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 09:45:29 [notice] 5836#5132: signal process started
+2011/06/08 09:45:29 [error] 5836#5132: OpenEvent("ngx_stop_4544") failed (2: The system cannot find the file specified)
+2011/06/08 09:45:30 [warn] 4372#3372: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 09:45:30 [warn] 3812#836: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:16:15 [warn] 2352#4336: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:16:15 [notice] 2352#4336: signal process started
+2011/06/08 10:16:15 [error] 2352#4336: OpenEvent("ngx_stop_4372") failed (2: The system cannot find the file specified)
+2011/06/08 10:16:16 [warn] 5668#4032: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:16:16 [warn] 5940#5600: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:21:00 [warn] 3280#5812: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:21:00 [notice] 3280#5812: signal process started
+2011/06/08 10:21:00 [error] 3280#5812: OpenEvent("ngx_stop_5668") failed (2: The system cannot find the file specified)
+2011/06/08 10:21:00 [warn] 4344#4568: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:21:01 [warn] 2948#3124: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:22:06 [warn] 4120#5284: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:22:06 [notice] 4120#5284: signal process started
+2011/06/08 10:22:06 [error] 4120#5284: OpenEvent("ngx_stop_4344") failed (2: The system cannot find the file specified)
+2011/06/08 10:22:06 [warn] 5940#5132: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/08 10:22:07 [warn] 4248#5572: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 10:37:48 [warn] 828#3232: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 10:37:49 [warn] 2204#3732: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 10:37:59 [warn] 4640#4224: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 10:37:59 [warn] 4828#5936: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 10:38:02 [warn] 4220#5572: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 10:38:02 [notice] 4220#5572: signal process started
+2011/06/09 10:38:02 [error] 4220#5572: OpenEvent("ngx_stop_4640") failed (2: The system cannot find the file specified)
+2011/06/09 10:38:03 [warn] 1348#4656: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 10:38:03 [warn] 4144#6008: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:36:44 [warn] 7328#7648: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:36:44 [notice] 7328#7648: signal process started
+2011/06/09 11:36:44 [error] 7328#7648: OpenEvent("ngx_stop_1348") failed (2: The system cannot find the file specified)
+2011/06/09 11:36:48 [warn] 7340#6592: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:36:48 [notice] 7340#6592: signal process started
+2011/06/09 11:36:48 [error] 7340#6592: OpenEvent("ngx_stop_1348") failed (2: The system cannot find the file specified)
+2011/06/09 11:39:25 [warn] 7768#6900: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:39:25 [warn] 5580#7920: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:39:28 [warn] 6204#7676: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:39:28 [warn] 7016#6180: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:40:03 [warn] 5804#7520: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:40:03 [notice] 5804#7520: signal process started
+2011/06/09 11:40:03 [error] 5804#7520: OpenEvent("ngx_stop_6204") failed (2: The system cannot find the file specified)
+2011/06/09 11:40:06 [warn] 4048#5376: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 11:40:06 [notice] 4048#5376: signal process started
+2011/06/09 11:40:06 [error] 4048#5376: OpenEvent("ngx_stop_6204") failed (2: The system cannot find the file specified)
+2011/06/09 12:20:46 [warn] 4144#7652: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/09 12:20:46 [warn] 5000#6476: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
