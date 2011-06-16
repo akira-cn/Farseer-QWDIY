@@ -136,3 +136,130 @@
 2011/06/09 11:40:06 [error] 4048#5376: OpenEvent("ngx_stop_6204") failed (2: The system cannot find the file specified)
 2011/06/09 12:20:46 [warn] 4144#7652: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
 2011/06/09 12:20:46 [warn] 5000#6476: duplicate MIME type "text/html" in D:\workspace\dev\Farseer/conf/nginx.conf:21
+2011/06/13 10:13:54 [warn] 1208#6088: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/13 10:13:55 [warn] 4524#4928: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/13 10:45:23 [error] 4524#5188: *8 directory index of "D:\workspace\git\fsdiy/qwdiy/resource/" is forbidden, client: 127.0.0.1, server: farseer, request: "GET /resource/ HTTP/1.1", host: "localhost"
+2011/06/14 09:45:28 [warn] 320#4616: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/14 09:45:29 [warn] 6040#2892: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/14 18:06:30 [warn] 6852#7756: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/14 18:06:30 [notice] 6852#7756: signal process started
+2011/06/14 18:06:30 [error] 6852#7756: OpenEvent("ngx_stop_320") failed (2: The system cannot find the file specified)
+2011/06/14 18:06:31 [warn] 8180#6316: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/14 18:06:31 [warn] 5236#7032: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/14 18:17:51 [warn] 7844#7660: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/14 18:17:51 [notice] 7844#7660: signal process started
+2011/06/14 18:17:51 [error] 7844#7660: OpenEvent("ngx_stop_8180") failed (2: The system cannot find the file specified)
+2011/06/14 18:17:52 [warn] 4784#6848: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/14 18:17:52 [warn] 6736#5156: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 09:00:13 [warn] 6076#6088: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 09:00:13 [warn] 3812#3780: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:22:13 [warn] 496#4564: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:22:13 [notice] 496#4564: signal process started
+2011/06/15 10:22:13 [error] 496#4564: OpenEvent("ngx_stop_6076") failed (2: The system cannot find the file specified)
+2011/06/15 10:22:14 [warn] 4780#4148: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:22:14 [warn] 4264#3380: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:22:35 [warn] 4580#1980: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:22:35 [notice] 4580#1980: signal process started
+2011/06/15 10:22:35 [error] 4580#1980: OpenEvent("ngx_stop_4780") failed (2: The system cannot find the file specified)
+2011/06/15 10:22:36 [warn] 4160#6060: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:22:36 [warn] 5652#5544: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:24 [warn] 7576#7464: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:24 [notice] 7576#7464: signal process started
+2011/06/15 10:25:24 [error] 7576#7464: OpenEvent("ngx_stop_4160") failed (2: The system cannot find the file specified)
+2011/06/15 10:25:25 [warn] 7592#7604: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:25 [warn] 7800#7804: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:37 [warn] 7200#7204: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:37 [notice] 7200#7204: signal process started
+2011/06/15 10:25:37 [error] 7200#7204: OpenEvent("ngx_stop_7592") failed (2: The system cannot find the file specified)
+2011/06/15 10:25:38 [warn] 7216#7220: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:38 [warn] 7356#7360: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:51 [warn] 6844#6848: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:51 [notice] 6844#6848: signal process started
+2011/06/15 10:25:51 [error] 6844#6848: OpenEvent("ngx_stop_7216") failed (2: The system cannot find the file specified)
+2011/06/15 10:25:52 [warn] 6572#6528: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:25:52 [warn] 5584#4904: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:26:59 [warn] 6652#6648: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:26:59 [notice] 6652#6648: signal process started
+2011/06/15 10:26:59 [error] 6652#6648: OpenEvent("ngx_stop_6572") failed (2: The system cannot find the file specified)
+2011/06/15 10:26:59 [warn] 6692#6696: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:27:00 [warn] 1028#1660: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:27:26 [warn] 7788#7792: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:27:26 [notice] 7788#7792: signal process started
+2011/06/15 10:27:26 [error] 7788#7792: OpenEvent("ngx_stop_6692") failed (2: The system cannot find the file specified)
+2011/06/15 10:27:27 [warn] 7904#7908: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:27:27 [warn] 7384#2652: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:29:41 [warn] 2740#6208: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:29:41 [notice] 2740#6208: signal process started
+2011/06/15 10:29:41 [error] 2740#6208: OpenEvent("ngx_stop_7904") failed (2: The system cannot find the file specified)
+2011/06/15 10:29:41 [warn] 7216#5292: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:29:42 [warn] 6292#5060: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:31:22 [warn] 6480#7804: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:31:22 [notice] 6480#7804: signal process started
+2011/06/15 10:31:22 [error] 6480#7804: OpenEvent("ngx_stop_7216") failed (2: The system cannot find the file specified)
+2011/06/15 10:31:23 [warn] 6760#6768: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:31:23 [warn] 7076#7080: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:35:38 [warn] 4144#7484: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:35:38 [notice] 4144#7484: signal process started
+2011/06/15 10:35:38 [error] 4144#7484: OpenEvent("ngx_stop_6760") failed (2: The system cannot find the file specified)
+2011/06/15 10:35:39 [warn] 7528#6324: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:35:39 [warn] 6644#7596: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:37:19 [warn] 6852#7208: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:37:19 [notice] 6852#7208: signal process started
+2011/06/15 10:37:19 [error] 6852#7208: OpenEvent("ngx_stop_7528") failed (2: The system cannot find the file specified)
+2011/06/15 10:37:20 [warn] 6860#6900: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:37:20 [warn] 6168#7160: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:37:51 [warn] 6888#7144: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:37:51 [emerg] 6888#7144: unknown directive "echo" in D:\workspace\git\fsdiy/conf/nginx.conf:49
+2011/06/15 10:37:52 [warn] 7312#7316: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:37:52 [emerg] 7312#7316: unknown directive "echo" in D:\workspace\git\fsdiy/conf/nginx.conf:49
+2011/06/15 10:39:07 [warn] 6532#8080: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:39:07 [notice] 6532#8080: signal process started
+2011/06/15 10:39:07 [error] 6532#8080: OpenEvent("ngx_stop_6860") failed (2: The system cannot find the file specified)
+2011/06/15 10:39:08 [warn] 5696#264: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:39:08 [warn] 6312#6672: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:40:05 [warn] 7272#7144: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:40:05 [notice] 7272#7144: signal process started
+2011/06/15 10:40:05 [error] 7272#7144: OpenEvent("ngx_stop_5696") failed (2: The system cannot find the file specified)
+2011/06/15 10:40:06 [warn] 6888#7336: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:40:06 [warn] 7732#6432: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:40:29 [warn] 6968#3508: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:40:29 [notice] 6968#3508: signal process started
+2011/06/15 10:40:29 [error] 6968#3508: OpenEvent("ngx_stop_6888") failed (2: The system cannot find the file specified)
+2011/06/15 10:40:29 [warn] 5812#7524: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:40:30 [warn] 4152#6752: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:41:21 [warn] 4256#7848: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:41:21 [emerg] 4256#7848: unknown directive "else" in D:\workspace\git\fsdiy/conf/nginx.conf:36
+2011/06/15 10:41:22 [warn] 5624#7036: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:41:22 [emerg] 5624#7036: unknown directive "else" in D:\workspace\git\fsdiy/conf/nginx.conf:36
+2011/06/15 10:43:24 [warn] 5696#2636: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:43:24 [notice] 5696#2636: signal process started
+2011/06/15 10:43:24 [error] 5696#2636: OpenEvent("ngx_stop_5812") failed (2: The system cannot find the file specified)
+2011/06/15 10:43:25 [warn] 5080#7992: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:43:25 [warn] 6420#7780: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:45:35 [warn] 4148#7844: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:45:35 [emerg] 4148#7844: unexpected "}" in D:\workspace\git\fsdiy/conf/nginx.conf:43
+2011/06/15 10:45:36 [warn] 7888#6632: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:45:36 [emerg] 7888#6632: unexpected "}" in D:\workspace\git\fsdiy/conf/nginx.conf:43
+2011/06/15 10:46:04 [warn] 8184#6752: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:46:04 [notice] 8184#6752: signal process started
+2011/06/15 10:46:04 [error] 8184#6752: OpenEvent("ngx_stop_5080") failed (2: The system cannot find the file specified)
+2011/06/15 10:46:04 [warn] 7132#6076: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:46:05 [warn] 336#6676: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:47:31 [warn] 6524#6512: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:47:31 [notice] 6524#6512: signal process started
+2011/06/15 10:47:31 [error] 6524#6512: OpenEvent("ngx_stop_7132") failed (2: The system cannot find the file specified)
+2011/06/15 10:47:32 [warn] 7872#6824: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:47:32 [warn] 6852#7452: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:49:03 [warn] 6216#6780: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:49:03 [emerg] 6216#6780: invalid condition "~" in D:\workspace\git\fsdiy/conf/nginx.conf:39
+2011/06/15 10:49:03 [warn] 6356#6248: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:49:03 [emerg] 6356#6248: invalid condition "~" in D:\workspace\git\fsdiy/conf/nginx.conf:39
+2011/06/15 10:50:30 [warn] 8108#7440: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:50:30 [emerg] 8108#7440: "include" directive is not allowed here in D:\workspace\git\fsdiy/conf/nginx.conf:40
+2011/06/15 10:50:30 [warn] 5048#6564: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:50:30 [emerg] 5048#6564: "include" directive is not allowed here in D:\workspace\git\fsdiy/conf/nginx.conf:40
+2011/06/15 10:51:24 [warn] 7328#7884: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:51:24 [notice] 7328#7884: signal process started
+2011/06/15 10:51:24 [error] 7328#7884: OpenEvent("ngx_stop_7872") failed (2: The system cannot find the file specified)
+2011/06/15 10:51:25 [warn] 6784#6840: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/15 10:51:25 [warn] 5476#1828: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21

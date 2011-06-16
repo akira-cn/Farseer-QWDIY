@@ -180,7 +180,8 @@
 
 	CustEvent.createEvents = function(target, types) {
 		CustEventTargetH.createEvents(target, types); 
-		return mix(target, methodized);//尊重对象本身的on。
+		var m = mix(target, methodized);//尊重对象本身的on。
+		return m;
 	};
 
 	/*
