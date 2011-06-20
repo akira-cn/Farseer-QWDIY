@@ -369,3 +369,5 @@
 2011/06/20 19:30:18 [error] 13796#14068: OpenEvent("ngx_stop_13072") failed (2: The system cannot find the file specified)
 2011/06/20 19:32:23 [notice] 15192#15208: signal process started
 2011/06/20 19:32:23 [error] 15192#15208: OpenEvent("ngx_stop_9404") failed (2: The system cannot find the file specified)
+2011/06/20 22:03:45 [emerg] 74536#77492: CreateDirectory() "C:\Users\akira\workspace\git\Farseer-QWDIY/temp/client_body_temp" failed (3: The system cannot find the path specified)
+2011/06/20 22:04:12 [emerg] 78252#78256: CreateDirectory() "C:\Users\akira\workspace\git\Farseer-QWDIY/temp/client_body_temp" failed (3: The system cannot find the path specified)

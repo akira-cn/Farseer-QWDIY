@@ -12,7 +12,7 @@ class Memcached extends CI_Controller {
 	 * test direct output
 	 *
 	 */
-	public function index($person="world")
+	public function index()
 	{
 		$mem = new Memcache;
 		$mem->connect("127.0.0.1", 11211);

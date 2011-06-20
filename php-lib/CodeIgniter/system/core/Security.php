@@ -59,7 +59,10 @@ class CI_Security {
 	public function __construct()
 	{
 		// Append application specific cookie prefix to token name
-		$this->_csrf_cookie_name = (config_item('cookie_prefix')) ? config_item('cookie_prefix').$this->_csrf_token_name : $this->_csrf_token_name;
+		//$this->_csrf_cookie_name = (config_item('cookie_prefix')) ? config_item('cookie_prefix').$this->_csrf_token_name : $this->_csrf_token_name;
+		$this->_csrf_token_name  = config_item('csrf_token_name');
+		$this->_csrf_cookie_name = config_item('csrf_cookie_name');
+		//fixed by akira
 
 		// Set the CSRF hash
 		$this->_csrf_set_hash();

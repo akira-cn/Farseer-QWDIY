@@ -1,4 +1,6 @@
 <?php
+	define('SSI_APP_PATH', SSI_ROOT_PATH.'/'.SSI_APP_NAME.'/application');
+	define('SSI_LIB_PATH', dirname(__FILE__) . '/../../php-lib/CodeIgniter/system');
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -55,7 +57,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = '../qwdiy/system';
+	$system_path = SSI_LIB_PATH;
 
 /*
  *---------------------------------------------------------------
@@ -71,7 +73,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = '../qwdiy/application';
+	$application_folder = SSI_APP_PATH;
 
 /*
  * --------------------------------------------------------------------

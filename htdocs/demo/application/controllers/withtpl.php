@@ -58,4 +58,10 @@ class WithTpl extends CI_Controller {
 
 		$this->tpl->view();
 	}
+	public function debug(){
+		$data = array(
+			"key" => "value",
+		);
+		$this->tpl->view("debug",$data);
+	}
 }
