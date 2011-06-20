@@ -1,0 +1,93 @@
+
+#user  nobody;
+worker_processes  8;
+worker_cpu_affinity 00000001 00000010 00000100 00001000 00010000 00100000 01000000 10000000;
+worker_rlimit_nofile 51200;
+
+error_log  logs/error_log  warn;
+#error_log  logs/error.log  info;
+pid        logs/nginx.pid;
+
+
+events {
+    use epoll;
+    worker_connections  51200;
+}
+
+
+http {
+    include       mime.types;
+    include       upstream.conf;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  logs/access_log  main;
+
+    server_names_hash_bucket_size 128;
+    client_header_buffer_size 4k;
+    large_client_header_buffers 4 32k;
+    client_max_body_size 4m;
+
+    sendfile        on;
+    tcp_nopush      on;
+    tcp_nodelay     on;
+
+    fastcgi_connect_timeout 5;
+    fastcgi_send_timeout 10;
+    fastcgi_read_timeout 10;
+    fastcgi_buffer_size 64k;
+    fastcgi_buffers 4 64k;
+    fastcgi_busy_buffers_size 128k;
+    fastcgi_temp_file_write_size 128k;
+
+    keepalive_timeout  0;
+    #keepalive_timeout  65;
+
+    gzip on;
+    gzip_min_length 1k;
+    gzip_buffers 4 16k;
+    gzip_http_version 1.0;
+    gzip_comp_level 2;
+    gzip_types text/plain application/x-javascript text/css application/xml;
+    gzip_vary on;
+
+    server {
+        listen       8080 default backlog=1024;
+        server_name  ssi.snda.com;
+        root   /home/shengda/snda-php/webroot;
+	server_tokens  off;
+        more_set_headers 'Server: Apache';
+        fastcgi_intercept_errors on;
+        error_page 400 403 404 500 501 502 503 504 505 /50x.html;
+
+        location / {
+            try_files $uri @torewrite;
+            index  index.html index.htm;
+        }
+
+        location @torewrite {
+            rewrite "^(.*)$" /index.php$1 last;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ \.php {
+            #fastcgi_pass   127.0.0.1:9000;
+            fastcgi_pass   FastCgiServers;
+            fastcgi_index  index.php;
+            #fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+            fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+            include        fastcgi_params;
+        }
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+}

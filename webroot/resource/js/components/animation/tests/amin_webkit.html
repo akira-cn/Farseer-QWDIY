@@ -1,0 +1,34 @@
+<?doctype html>
+<!DOCTYPE html>
+<title>Script-based animation using requestAnimationFrame</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<style>
+div#animated { position: absolute; left: 10px; top: 60px; padding: 50px;
+  background: crimson; color: white }
+</style>
+<script src="../qwrap-com.js"></script>
+<script src="../anim.frame.js"></script>
+<script>
+var requestId = 0;
+
+function animate(time) {
+  var progress = time - animationStartTime;
+  document.getElementById("animated").style.left = progress % 2000 / 4 + "px";
+  //console.log(progress);
+  requestId = window.requestAnimationFrame(animate);
+}
+function start() {
+  animationStartTime = new Date();
+  
+  requestId = window.requestAnimationFrame(animate);
+}
+function stop() {
+  if (requestId)
+    window.cancelRequestAnimationFrame(requestId);
+  requestId = 0;
+}
+</script>
+<button onclick="start()">Click me to start!</button>
+<button onclick="stop()">Click me to stop!</button>
+<div id="animated">Hello there.</div>
+<div id="log"></div>

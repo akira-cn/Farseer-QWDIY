@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jerry Qu's HTML document</title>
+    <meta http-equiv="Pragma" content="no-cache" />  
+    <meta http-equiv="Cache-Control" content="no-cache" />     
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="ImageToolbar" content="no" />
+	<script type="text/javascript" src="main.js"></script>
+    <style type="text/css" title="default" media="screen">
+    /*<![CDATA[*/
+
+    /*]]>*/
+    </style>
+    </head>
+	<body>
+		<h3>点击小球</h3>
+		<div id="txt" style="width:600px;"></div>
+		<div id="test1" style="cursor:pointer;position:absolute;top:250px;left:200px;width:64px;height:64px;background:url(img/ball.png)"></div>
+		<script type="text/javascript">
+			var Anim = QW.ElAnim,
+				Dom = QW.Dom,
+				NodeW = QW.NodeW,
+				$ = Dom.g,
+				$$ = NodeW;
+
+			var anim1 = new Anim("test1", {
+				"top" : {
+					by  : 150,
+					end : 250,
+					easing : function(p,d){
+						return Math.sin(p*p*32*Math.PI) * d;
+					}
+				},
+				"left" : {
+					by  : 150,
+					end : 200,
+					easing : function(p,d){
+						return Math.cos(p*p*32*Math.PI) * d;
+					}
+				}
+			}, 6000);
+			["enterframe", "beforestart", "end", "pause", "resume", "reset"].forEach(function(s) {
+				anim1.on(s,function(e){
+					$("txt").innerHTML += e.type + "&nbsp;<wbr>";
+				});
+			});
+			//addEventlistener
+			$$("#test1").on("click", function(){
+				anim1.start();
+				setTimeout(function() {
+					anim1.pause();
+				},3000);
+				setTimeout(function() {
+					anim1.resume();
+				},4000);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<info>
+		<name>Animation</name>
+		<author>Jerry</author>
+		<version>0.1</version>
+		<create-date></create-date>
+		<last-modified></last-modified>
+	</info>
+	<examples>
+		<example>
+			<title>跳动的小球</title>
+			<discription></discription>
+			<url>ball.html</url>
+			<image>ball.jpg</image>
+		</example>	
+		<example>
+			<title>动画算子</title>
+			<discription></discription>
+			<url>easing.html</url>
+			<image>easing.jpg</image>
+		</example>
+
+	</examples>
+</config>

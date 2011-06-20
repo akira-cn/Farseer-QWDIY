@@ -1,0 +1,3 @@
+upstream  FastCgiServers {
+    server  127.0.0.1:9000 weight=1;
+}

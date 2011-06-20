@@ -263,3 +263,109 @@
 2011/06/15 10:51:24 [error] 7328#7884: OpenEvent("ngx_stop_7872") failed (2: The system cannot find the file specified)
 2011/06/15 10:51:25 [warn] 6784#6840: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
 2011/06/15 10:51:25 [warn] 5476#1828: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/16 14:52:08 [warn] 7076#7448: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/16 14:52:09 [warn] 6768#2188: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:01:33 [warn] 9456#9484: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:01:33 [warn] 7484#6296: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:01:38 [warn] 9840#9844: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:01:38 [notice] 9840#9844: signal process started
+2011/06/20 17:01:38 [error] 9840#9844: OpenEvent("ngx_stop_9456") failed (2: The system cannot find the file specified)
+2011/06/20 17:01:38 [warn] 9808#9864: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:01:39 [warn] 7488#7384: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:29:02 [warn] 5220#8768: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:29:02 [notice] 5220#8768: signal process started
+2011/06/20 17:29:02 [error] 5220#8768: OpenEvent("ngx_stop_9808") failed (2: The system cannot find the file specified)
+2011/06/20 17:29:03 [warn] 8808#8820: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:29:03 [warn] 8948#8816: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:29:19 [warn] 8276#8624: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:29:19 [notice] 8276#8624: signal process started
+2011/06/20 17:29:19 [error] 8276#8624: OpenEvent("ngx_stop_8808") failed (2: The system cannot find the file specified)
+2011/06/20 17:29:20 [warn] 6644#9732: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 17:29:20 [warn] 6412#8596: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:04:46 [warn] 11496#11508: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:04:46 [warn] 11536#11544: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:04:49 [warn] 9504#11208: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:04:49 [notice] 9504#11208: signal process started
+2011/06/20 18:04:49 [error] 9504#11208: OpenEvent("ngx_stop_11496") failed (2: The system cannot find the file specified)
+2011/06/20 18:04:50 [warn] 9640#6148: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:04:50 [warn] 9444#1868: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:07:27 [warn] 9844#9636: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:07:27 [notice] 9844#9636: signal process started
+2011/06/20 18:07:27 [error] 9844#9636: OpenEvent("ngx_stop_9640") failed (2: The system cannot find the file specified)
+2011/06/20 18:07:28 [warn] 12176#10808: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:07:28 [warn] 8204#8288: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:07:59 [warn] 10584#7504: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:07:59 [notice] 10584#7504: signal process started
+2011/06/20 18:07:59 [error] 10584#7504: OpenEvent("ngx_stop_12176") failed (2: The system cannot find the file specified)
+2011/06/20 18:08:00 [warn] 7540#10644: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:08:00 [warn] 12036#11632: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:16:58 [warn] 9076#11800: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:16:58 [notice] 9076#11800: signal process started
+2011/06/20 18:16:58 [error] 9076#11800: OpenEvent("ngx_stop_7540") failed (2: The system cannot find the file specified)
+2011/06/20 18:17:39 [warn] 8428#9900: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:4
+2011/06/20 18:17:39 [emerg] 8428#9900: invalid event type "epoll" in D:\workspace\git\fsdiy/conf/nginx.conf:13
+2011/06/20 18:17:39 [warn] 10964#10620: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:4
+2011/06/20 18:17:39 [emerg] 10964#10620: invalid event type "epoll" in D:\workspace\git\fsdiy/conf/nginx.conf:13
+2011/06/20 18:18:57 [warn] 11116#12200: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:4
+2011/06/20 18:18:57 [emerg] 11116#12200: CreateFile() "D:\workspace\git\fsdiy/conf/upstream.conf" failed (2: The system cannot find the file specified) in D:\workspace\git\fsdiy/conf/nginx.conf:20
+2011/06/20 18:18:58 [warn] 12076#8120: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:4
+2011/06/20 18:18:58 [emerg] 12076#8120: CreateFile() "D:\workspace\git\fsdiy/conf/upstream.conf" failed (2: The system cannot find the file specified) in D:\workspace\git\fsdiy/conf/nginx.conf:20
+2011/06/20 18:24:14 [warn] 11920#11192: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:24:14 [notice] 11920#11192: signal process started
+2011/06/20 18:24:14 [error] 11920#11192: OpenEvent("ngx_stop_7540") failed (2: The system cannot find the file specified)
+2011/06/20 18:24:14 [warn] 11276#6668: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:24:15 [warn] 6644#6892: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:21
+2011/06/20 18:24:50 [warn] 11984#11988: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:50 [warn] 11984#11988: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:50 [notice] 11984#11988: signal process started
+2011/06/20 18:24:50 [error] 11984#11988: OpenEvent("ngx_stop_11276") failed (2: The system cannot find the file specified)
+2011/06/20 18:24:51 [warn] 10540#5848: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:51 [warn] 10540#5848: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:51 [warn] 9900#12120: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:51 [warn] 9900#12120: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:51 [warn] 12280#11508: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:51 [warn] 12280#11508: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:52 [warn] 8824#11516: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:52 [warn] 8824#11516: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:52 [warn] 6892#10960: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:52 [warn] 6892#10960: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:52 [warn] 8896#8456: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:52 [warn] 8896#8456: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:52 [warn] 8636#10180: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:52 [warn] 8636#10180: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:52 [warn] 12308#12312: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:52 [warn] 12308#12312: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:24:53 [warn] 12368#12372: "worker_cpu_affinity" is not supported on this platform, ignored in D:\workspace\git\fsdiy/conf/nginx.conf:11
+2011/06/20 18:24:53 [warn] 12368#12372: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:25
+2011/06/20 18:25:21 [warn] 13576#13580: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:22
+2011/06/20 18:25:21 [notice] 13576#13580: signal process started
+2011/06/20 18:25:21 [error] 13576#13580: OpenEvent("ngx_stop_10540") failed (2: The system cannot find the file specified)
+2011/06/20 18:25:22 [warn] 13920#13924: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:22
+2011/06/20 18:25:23 [warn] 14016#14020: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:22
+2011/06/20 18:26:31 [warn] 12920#12928: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:26
+2011/06/20 18:26:31 [notice] 12920#12928: signal process started
+2011/06/20 18:26:31 [error] 12920#12928: OpenEvent("ngx_stop_13920") failed (2: The system cannot find the file specified)
+2011/06/20 18:26:31 [warn] 12996#13000: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:26
+2011/06/20 18:26:32 [warn] 13188#13192: duplicate MIME type "text/html" in D:\workspace\git\fsdiy/conf/nginx.conf:26
+2011/06/20 18:29:40 [notice] 11824#10920: signal process started
+2011/06/20 18:29:40 [error] 11824#10920: OpenEvent("ngx_stop_12996") failed (2: The system cannot find the file specified)
+2011/06/20 18:32:03 [notice] 12600#12604: signal process started
+2011/06/20 18:32:03 [error] 12600#12604: OpenEvent("ngx_stop_10068") failed (2: The system cannot find the file specified)
+2011/06/20 18:35:49 [emerg] 13012#13008: unknown directive "more_set_headers" in D:\workspace\git\fsdiy/conf/nginx.conf:51
+2011/06/20 18:35:50 [emerg] 13016#12464: unknown directive "more_set_headers" in D:\workspace\git\fsdiy/conf/nginx.conf:51
+2011/06/20 18:37:10 [notice] 13860#13856: signal process started
+2011/06/20 18:37:10 [error] 13860#13856: OpenEvent("ngx_stop_12444") failed (2: The system cannot find the file specified)
+2011/06/20 18:51:25 [notice] 12784#8460: signal process started
+2011/06/20 18:51:25 [error] 12784#8460: OpenEvent("ngx_stop_12908") failed (2: The system cannot find the file specified)
+2011/06/20 18:52:43 [emerg] 12768#8460: no port in upstream "FastCgiServers" in D:\workspace\git\fsdiy/conf/nginx.conf:72
+2011/06/20 18:52:43 [emerg] 12784#12100: no port in upstream "FastCgiServers" in D:\workspace\git\fsdiy/conf/nginx.conf:72
+2011/06/20 18:53:27 [notice] 13504#11824: signal process started
+2011/06/20 18:53:27 [error] 13504#11824: OpenEvent("ngx_stop_13964") failed (2: The system cannot find the file specified)
+2011/06/20 19:29:32 [notice] 14308#11304: signal process started
+2011/06/20 19:29:32 [error] 14308#11304: OpenEvent("ngx_stop_12256") failed (2: The system cannot find the file specified)
+2011/06/20 19:30:16 [notice] 13928#12012: signal process started
+2011/06/20 19:30:16 [error] 13928#12012: OpenEvent("ngx_stop_13072") failed (2: The system cannot find the file specified)
+2011/06/20 19:30:18 [notice] 13796#14068: signal process started
+2011/06/20 19:30:18 [error] 13796#14068: OpenEvent("ngx_stop_13072") failed (2: The system cannot find the file specified)
+2011/06/20 19:32:23 [notice] 15192#15208: signal process started
+2011/06/20 19:32:23 [error] 15192#15208: OpenEvent("ngx_stop_9404") failed (2: The system cannot find the file specified)

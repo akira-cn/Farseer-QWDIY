@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jerry Qu's HTML document</title>
+    <meta http-equiv="Pragma" content="no-cache" />  
+    <meta http-equiv="Cache-Control" content="no-cache" />     
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="ImageToolbar" content="no" />
+	<script type="text/javascript" src="main.js"></script>
+    <style type="text/css" title="default" media="screen">
+    /*<![CDATA[*/
+
+    /*]]>*/
+    </style>
+    </head>
+	<body>
+		<h3>Anim动画</h3>
+		<div id="test" style="width:20em;height:6em;overflow:auto;border:1px solid #ccc;">
+			<p>Sed pretium leo a quam. Sed placerat cursus odio. Duis varius mauris luctus enim. Sed augue. Vivamus malesuada pretium orci. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent et ante. Praesent convallis. Pellentesque sit amet leo. Ut convallis. Curabitur tincidunt, ipsum facilisis ultricies bibendum, eros dolor venenatis odio, id rutrum purus sem ac sem. Donec vel enim. Quisque purus. Vivamus fringilla, nibh sit amet blandit suscipit, dui arcu viverra magna, id consectetuer dui orci tincidunt neque. Morbi eget libero. Phasellus tempor. Duis dapibus. Pellentesque nisi arcu, mollis in, euismod non, fermentum sit amet, neque.</p>
+		</div><br /><br /><br />
+		<input type="button" value="去底部" id="test4"/>
+		<input type="button" value="下翻" id="test1"/>
+		<input type="button" value="上翻" id="test3"/>
+		<input type="button" value="回顶部" id="test2"/>
+		<script type="text/javascript">
+			//anim3
+			var Anim = QW.ElAnim,
+				Dom = QW.Dom,
+				NodeW = QW.NodeW,
+				$ = Dom.g,
+				$$ = NodeW;
+
+			window.onload = function(){
+				//下翻
+				$("test1").onclick = function(){
+					var anim1 = new Anim($("test"), {
+						"scrollTop" : {
+							by : 80
+						}
+					}, 500);
+					
+					anim1.on("beforestart", function(){
+						$$(["test1", "test2", "test3", "test4"]).setAttr("disabled", "disabled");
+					});
+					anim1.on("end", function(){
+						$$(["test1", "test2", "test3", "test4"]).setAttr("disabled", "");
+						
+					});
+					anim1.on("enterframe", function(evt){
+						var max = NodeW('#test').get('scrollHeight') - NodeW('#test').get('clientHeight');
+						if(($("test").scrollTop | 0) >= max){
+							anim1.cancel();
+						}
+					});
+					anim1.start();
+				};
+				//回顶部
+				$("test2").onclick = function(){
+					var anim1 = new Anim($("test"), {
+						"scrollTop" : {
+							by : -1000
+						}
+					}, 2000, Anim.Easing.easeBothStrong);
+
+					anim1.on("beforestart", function(){
+						$$(["test1", "test2", "test3", "test4"]).setAttr("disabled", "disabled");
+					});
+					anim1.on("end", function(){
+						$$(["test1", "test2", "test3", "test4"]).setAttr("disabled", "");
+						
+					});
+					anim1.on("enterframe", function(evt){
+						if(($("test").scrollTop | 0) <= 0){
+							anim1.cancel();
+						}
+					});
+					
+					anim1.start();
+				};
+				$("test3").onclick = function(){ //下翻
+					var anim1 = new Anim($("test"), {
+						"scrollTop" : {
+							by : -80
+						}
+					}, 500);
+					anim1.on("beforestart", function(){
+						$$(["test1", "test2", "test3", "test4"]).setAttr("disabled", "disabled");
+					});
+					anim1.on("end", function(){
+						$$(["test1", "test2", "test3", "test4"]).setAttr("disabled", "");
+						
+					});
+					anim1.on("enterframe", function(evt){
+						if(($("test").scrollTop | 0) <= 0){
+							anim1.cancel();
+						}
+					});
+					
+					anim1.start();
+				};
+				$("test4").onclick = function(){ //回底部
+					var anim1 = new Anim($("test"), {
+						"scrollTop" : {
+							by : 1000
+						}
+					}, 2000, Anim.Easing.easeBothStrong);
+					
+					anim1.on("beforestart", function(){
+						$$(["test1", "test2", "test3", "test4"]).setAttr("disabled", "disabled");
+					});
+					anim1.on("end", function(){
+						$$(["test1", "test2", "test3", "test4"]).setAttr("disabled", "");
+						
+					});
+					anim1.on("enterframe", function(evt){
+						var max = NodeW('#test').get('scrollHeight') - NodeW('#test').get('clientHeight');
+						if(($("test").scrollTop | 0) >= max){
+							anim1.cancel();
+						}
+					});
+					anim1.start();
+				};
+			};
+		</script>
+	</body>
+</html>

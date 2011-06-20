@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<title>Script-based animation using requestAnimationFrame</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<style>
+div#animated { position: absolute; left: 10px; top: 60px; padding: 50px;
+  background: crimson; color: white }
+</style>
+<script src="../qwrap-com.js"></script>
+<script src="../anim.frame.js"></script>
+<script src="../anim.base.js"></script>
+<script src="../anim.el.js"></script>
+<button onclick="start()">Click me to start!</button>
+<button onclick="reset()">Click me to reset!</button>
+<button onclick="pause()">Click me to pause!</button>
+<button onclick="resume()">Click me to resume!</button>
+<div id="animated">Hello there.</div>
+<div id="log"></div>
+<script>
+
+var anim = new ElAnim("animated", {
+	left : {
+		from : 10,
+		by : 200 
+	},
+	backgroundColor:{
+		from : "#f00",
+		to : "#00f"
+	},
+	opacity:{
+		to : 0.3
+	}
+}, 3000);
+
+/*function animate(per) {
+  document.getElementById("animated").style.left = per * 200 + "px";
+}
+
+var anim = new Anim(animate);
+*/
+
+function start(){
+	anim.start();
+}
+function reset(){
+	anim.reset();
+}
+function pause(){
+	anim.pause();
+}
+function resume(){
+	anim.resume();
+}
+</script>

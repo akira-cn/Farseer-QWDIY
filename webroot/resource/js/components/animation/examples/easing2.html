@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jerry Qu's HTML document</title>
+    <meta http-equiv="Pragma" content="no-cache" />  
+    <meta http-equiv="Cache-Control" content="no-cache" />     
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="ImageToolbar" content="no" />
+    <style type="text/css" title="default" media="screen">
+		body{font-size:13px}
+		#container{width:550px;height:400px;border:1px solid blue;position:relative}
+    </style>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		var Easing = QW.ElAnim.Easing,
+			Dom = QW.Dom,
+			NodeW = QW.NodeW,
+			$ = Dom.g;
+
+		window.onload = function(){
+			var easings = QW.ObjectH.values(Easing);
+			
+			var btn = Dom.query('input[type="button"]')[0];
+			btn.disabled = false;
+
+			NodeW(btn).on("click",function(){
+				btn.disabled = true;
+				var container = $("container");
+				container.innerHTML = "";
+				var easing = easings[$("sel").value];
+				var ef = new QW.Anim(function(per){
+					var x = parseInt(550*per)-2;
+					var y = parseInt(easing(per,400))-2;
+					var d = document.createElement("div");
+					with(d.style){
+						height = "3px";
+						width = "3px";
+						overflow = "hidden";
+						backgroundColor = "red";
+						position = "absolute";
+						left = x+"px";
+						bottom = y+"px";
+					};
+					container.appendChild(d);
+				}, 5000);
+				ef.onend = function(){
+					btn.disabled = false;
+				};
+				ef.start();
+			});
+		};
+	</script>
+    </head>
+	<body>
+		<h2>动画类算子</h2>
+		<p>
+			<select id="sel">
+				<option value="0">Anim.Easing.easeNone</option>
+				<option value="1">Anim.Easing.easeIn</option>
+				<option value="2">Anim.Easing.easeOut</option>
+				<option value="3">Anim.Easing.easeBoth</option>
+				<option value="4">Anim.Easing.easeInStrong</option>
+				<option value="5">Anim.Easing.easeOutStrong</option>
+				<option value="6">Anim.Easing.easeBothStrong</option>
+				<option value="7">Anim.Easing.elasticIn</option>
+				<option value="8">Anim.Easing.elasticOut</option>
+				<option value="9">Anim.Easing.elasticBoth</option>
+				<option value="10">Anim.Easing.backIn</option>
+				<option value="11">Anim.Easing.backOut</option>
+				<option value="12">Anim.Easing.backBoth</option>
+				<option value="13">Anim.Easing.bounceIn</option>
+				<option value="14">Anim.Easing.bounceOut</option>
+				<option value="15">Anim.Easing.bounceBoth</option>
+			</select>&nbsp;&nbsp;<input type="button" value="绘图" />
+		</p>
+		<div id="container">
+
+		</div>
+	</body>
+</html>

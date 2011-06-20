@@ -113,6 +113,7 @@ class CI_Router {
 		$this->uri->_fetch_uri_string();
 
 		// Is there a URI string? If not, the default controller specified in the "routes" file will be shown.
+
 		if ($this->uri->uri_string == '')
 		{
 			return $this->_set_default_controller();
@@ -158,7 +159,8 @@ class CI_Router {
 		{
 			$this->set_class($this->default_controller);
 			$this->set_method('index');
-			$this->_set_request(array($this->default_controller, 'index'));
+			$this->_set_request(array(SSI_APP_NAME,$this->default_controller, 'index'));
+			//modify by akira to support app-path
 		}
 
 		// re-index the routed segments array so it starts with 1 rather than 0
@@ -183,7 +185,7 @@ class CI_Router {
 	function _set_request($segments = array())
 	{
 		$segments = $this->_validate_request($segments);
-
+		
 		if (count($segments) == 0)
 		{
 			return $this->_set_default_controller();
@@ -221,6 +223,8 @@ class CI_Router {
 	 */
 	function _validate_request($segments)
 	{
+		array_shift($segments); //modified by akira to support app-path
+
 		if (count($segments) == 0)
 		{
 			return $segments;

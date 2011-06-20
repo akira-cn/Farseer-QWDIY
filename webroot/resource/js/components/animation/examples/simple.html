@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jerry Qu's HTML document</title>
+    <meta http-equiv="Pragma" content="no-cache" />  
+    <meta http-equiv="Cache-Control" content="no-cache" />     
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="ImageToolbar" content="no" />
+	<script type="text/javascript" src="main.js"></script>
+    <style type="text/css" title="default" media="screen">
+    /*<![CDATA[*/
+		#test1 {cursor:pointer;position:absolute;top:90px;left:20px;width:300px;height:300px;border:red 1px solid;background-color:red}
+    /*]]>*/
+    </style>
+    </head>
+	<body>
+		<h3>点击方块</h3>
+		<div id="test1">el.shine4Error()<br />	
+		/*<br />
+		"backgroundColor" : {<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;from : "#f33",<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;to	 : "#fff",<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;end	 : ""<br />
+		}<br />
+		*/
+		</div>
+		<script type="text/javascript">
+			//addEventlistener
+			QW.NodeW("#test1").on("click",function(){
+				var el = QW.NodeW(this);
+				el.shine4Error();
+			});
+		</script>
+	</body>
+</html>

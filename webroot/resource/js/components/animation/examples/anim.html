@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jerry Qu's HTML document</title>
+    <meta http-equiv="Pragma" content="no-cache" />  
+    <meta http-equiv="Cache-Control" content="no-cache" />     
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="ImageToolbar" content="no" />
+	<script type="text/javascript" src="main.js"></script>
+    <style type="text/css" title="default" media="screen">
+    /*<![CDATA[*/
+
+    /*]]>*/
+    </style>
+    </head>
+	<body style="height:2000px;">
+		<h3>点击方块</h3>
+		<div id="monkey" style="cursor:pointer;position:absolute;top:-300px;left:-500px;width:157px;height:130px;background:url(img/monkey.gif)"></div>
+		<div id="test1" style="cursor:pointer;position:absolute;top:50px;left:20px;width:100px;height:100px;background:#6B90DA;border:#333"></div>
+		<div id="test2" style="cursor:pointer;position:absolute;top:160px;left:20px;width:100px;height:100px;background:#6B90DA;border:#333"></div>
+		<div id="test3" style="cursor:pointer;position:absolute;top:270px;left:20px;width:100px;height:100px;background:#6B90DA;border:#333"></div>
+		<div id="test4" style="cursor:pointer;position:absolute;top:380px;left:20px;width:100px;height:100px;background:#6B90DA;border:#333"></div>
+		<script type="text/javascript">
+			var Anim = QW.ElAnim,
+				Dom = QW.Dom,
+				W = QW.NodeW,
+				$ = QW.Dom.g;
+								
+			var anim1 = new Anim("test1", {
+				"left" : {
+					to : 500,
+					end : 100
+				}
+			}, 3000, Anim.Easing.backIn);
+
+			//anim2
+			var anim2 = new Anim("test2", {
+				"opacity" : {
+					from : 1,
+					to   : 0
+				}
+			}, 500);
+
+			//anim3
+			var anim3 = new Anim("test3", {
+				"width" : {
+					to : 0,
+					easing : Anim.Easing.easeOut
+				},
+				"height" : {
+					to : 0,
+					easing : Anim.Easing.easeOutStrong
+				}
+			}, 3000);
+
+			//anim4
+			var pos = Dom.getDocRect();
+			var anim4 = new Anim("test4", {
+				"opacity" : {
+					to : 0.5
+				},
+				"top" : {
+					to : pos.height/2 -150
+				},
+				"left" : {
+					to : pos.width/2 - 250
+				},
+				"width" : {
+					to : 500
+				},
+				"height" : {
+					to : 300
+				}
+			}, 3000, Anim.Easing.easeBothStrong);
+
+			//addEventlistener
+			W("#test1").on("click",function(){
+				anim1.start();
+			});
+
+			W("#test2").on("click",function(){
+				anim2.start();
+				setTimeout(function(){
+					anim2.reset();
+				}, 1500);
+			});
+
+			W("#test3").on("click",function(){
+				anim3.start();
+				
+				setTimeout(function(){
+					anim3.reset();
+				}, 3500);
+			});
+
+			W("#test4").on("click",function(){
+				anim4.start();
+				
+				setTimeout(function(){
+					anim4.reset();
+				}, 5000);
+			});
+			
+			W(document.body).on("dblclick",function(e){
+				var pos = {x:e.pageX,y:e.pageY};
+				var anim = new Anim($("monkey"),{
+					"left" : {
+						to : pos.x
+					},
+					"top" : {
+						to : pos.y
+					}/*,
+					"opacity" : {
+						from : 0,
+						to : 1
+					}*/
+				}, 2000, Anim.Easing.elasticOut);
+				
+				anim.start();
+			});
+
+			W("#monkey").on("click",function(){
+				new Anim($("monkey"),{
+					"opacity" : {
+						from : 1,
+						to : 0
+					}
+				}, 500).start();
+			});
+		</script>
+	</body>
+</html>
