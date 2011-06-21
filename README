@@ -4,7 +4,7 @@ Farseer QWDIY
 完全绿色 Win32 版
 运行 farseer.exe
 访问 http://localhost/
-http://localhost/demos/withtpl/
+http://localhost/demo/withtpl/
 
 修改 CodeIgniter 支持缺省index.php和index方法名
 让 Smarty3 支持模块化开发
