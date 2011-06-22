@@ -20,3 +20,13 @@ http://www.smarty.net/
 
 QWrap
 http://www.qwrap.com
+
+========================================================
+[2011/6/22]
+将CI框架作为扩展，不强制使用
+
+支持 YII
+支持 thrift
+增加 memcache
+增加 mysql
+增加 phpmyadmin

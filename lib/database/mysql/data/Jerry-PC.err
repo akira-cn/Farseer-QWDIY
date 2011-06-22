@@ -1,0 +1,10 @@
+110227 19:26:48 [Note] Plugin 'FEDERATED' is disabled.
+InnoDB: The InnoDB memory heap is disabled
+InnoDB: Mutexes and rw_locks use Windows interlocked functions
+InnoDB: Compressed tables use zlib 1.2.3
+110227 19:26:48  InnoDB: Initializing buffer pool, size = 128.0M
+110227 19:26:48  InnoDB: Completed initialization of buffer pool
+110227 19:26:48  InnoDB: Operating system error number 32 in a file operation.
+InnoDB: The error means that another program is using InnoDB's files.
+InnoDB: This might be a backup or antivirus software or another instance
+InnoDB: of MySQL. Please close it to get rid of this error.
