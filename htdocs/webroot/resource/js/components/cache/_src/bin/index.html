@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh_cn" lang="zh_cn">  
+<head>  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Jerry Qu's HTML document</title>
+    <meta http-equiv="Pragma" content="no-cache" />  
+    <meta http-equiv="Cache-Control" content="no-cache" />     
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="ImageToolbar" content="no" />
+	<script type="text/javascript">
+		var $ = function(s){return document.getElementById(s)};
+
+		function getFlash(id) {  
+			  if(navigator.appName.indexOf("Microsoft") != -1) {  
+				  return document.getElementById(id+"1");  
+			  }else{  
+				  return document.getElementById(id+"2");  
+			  }  
+		}; 
+		function flashReadyHandler(){
+			var flash = getFlash("cache");
+			$("t1").onclick = function(){
+				flash.set("test",$("txt").value);
+				$("info").innerHTML = "已写入~";
+				return false;
+			};
+			$("t2").onclick = function(){
+				$("txt").value = flash.get("test");
+				$("info").innerHTML = "读取成功~";
+				return false;
+			};
+			$("t3").onclick = function(){
+				flash.remove("test");
+				$("info").innerHTML = "删除成功~";
+				return false;
+			};
+			$("t4").onclick = function(){
+				location.href = location.href;
+				location.reload(true);
+				return false;
+			};
+		};  
+	</script>  
+</head>  
+<body>
+	<h2>利用flash的SharedObject实现本地存储</h2>
+	<textarea autocomplete="off" id="txt" style="width:300px;height:160px"></textarea><br />
+	<div id="info">&nbsp;</div><br />
+	<input id="t2" type="button" value="读取" />&nbsp;&nbsp;
+	<input id="t1" type="button" value="存储" />&nbsp;&nbsp;
+	<input id="t3" type="button" value="删除" />&nbsp;&nbsp;
+	<input id="t4" type="button" value="刷新" />
+	<div>
+		<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"   
+		codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0"   
+		width="1" height="1" id="cache1" align="middle">  
+		<param name="allowScriptAccess" value="sameDomain" />  
+		<param name="allowFullScreen" value="false" />  
+		<param name="movie" value="cache.swf" />  
+		<param name="quality" value="high" />  
+		<param name="bgcolor" value="#ffffff" />  
+		<embed src="cache.swf" quality="high" bgcolor="#ffffff" width="1" height="1"   
+			id="cache2" align="middle" allowScriptAccess="always" allowFullScreen="false"   
+			type="application/x-shockwave-flash"   
+			pluginspage="http://www.adobe.com/go/getflashplayer_cn" />  
+		</object>  
+	</div>
+</body>  
+</html>  

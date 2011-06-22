@@ -1,0 +1,4 @@
+<url-policy>
+    <allow-access-from url="imququ.com" /> 
+    <allow-access-from url="qgy18.com" />
+</url-policy>

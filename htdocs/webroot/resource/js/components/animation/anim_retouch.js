@@ -6,7 +6,7 @@
 		Dom = QW.Dom,
 		Anim = QW.ElAnim;
 
-	var AnimH = (function(){
+	var AnimElH = (function(){
 		return {
 			fadeIn : function(el, dur, callback) {
 				var anim = new Anim(el, {		
@@ -82,9 +82,8 @@
 	})();
 
 
-	AnimH = HH.mul(AnimH);
-	mix(Dom, AnimH);
-	var ah = HH.methodize(AnimH,  'core');
-	ah = HH.rwrap(ah, W);
-	mix(W.prototype, ah);
+	QW.NodeW.pluginHelper(AnimElH, 'operator');
+	if (QW.Dom) {
+		QW.ObjectH.mix(QW.Dom, AnimElH);
+	}
 })();

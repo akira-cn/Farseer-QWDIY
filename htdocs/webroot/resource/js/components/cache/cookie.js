@@ -1,93 +1,75 @@
 /*
- *	Copyright (c) 2010, Baidu Inc. All rights reserved.
- *	http://www.youa.com
- *	version: $version$ $release$ released
- *	author: quguangyu@baidu.com
+	Copyright (c) Baidu Youa Wed QWrap
+	version: $version$ $release$ released
+	author: Jerry(屈光宇)、JK(部分修改)
 */
 
-/**
- * @class Cookie Cookie类
- * @namespace QW
- * @cfg {string} path 
- * @cfg {string} domain 
- * @cfg {number} expires 
- * @cfg {string} secure 
- */
 
 (function() {
-	function Cookie(){
-		return this.init.apply(this,arguments);
+	/**
+	 * @class Cookie Cookie类
+	 * @namespace QW
+	 * @param {Json} options (Optional) Cookie参数配置，目前支持以下配置
+	 *  {string} path path，默认为'/' 
+	 *  {string} domain domain 
+	 *  {int} expires 过期毫秒数，默认为一年
+	 *  {string} secure 
+	 */
+	function Cookie(options) {
+		options = options || {};
+		this.path	 = options.path || "/";
+		this.domain	 = options.domain || "";
+		this.expires = options.expires || 3600000 * 24 * 365;
+		this.secure	 = options.secure || "";
 	}
 
-	Cookie.prototype = (function(){
-		return{
-			/**
-			 * 初始化
-			 *
-			 * @method init
-			 * @public
-			 * @param {options}  配置
-			 * @return void
-			 */
-			init:function(opt){
-				opt = opt || {};
-				this.path	 = opt.path || "/";
-				this.domain	 = opt.domain || "";
-				this.expires = opt.expires || 1000 * 60 * 60 * 24 * 365;
-				this.secure	 = opt.secure || "";
-			},
-			/**
-			 * 存储
-			 * @method set
-			 * @public
-			 * @param {string} key
-			 * @param {string} value
-			 * @return void
-			 */
-			set:function(key, value){
-				var now = new Date();
-				if(typeof(this.expires)=="number"){
-					now.setTime(now.getTime() + this.expires);
-				}
-				
-				document.cookie =
-					key + "="+ escape(value)
-					+ ";expires=" + now.toGMTString()
-					+ ";path="+ this.path
-					+ (this.domain == "" ? "" : ("; domain=" + this.domain))
-					+ (this.secure ? "; secure" : "");
-			},
-			/**
-			 * 读取
-			 * @method get
-			 * @public
-			 * @param {string} key
-			 * @return string
-			 */
-			get:function(key){
-				var a, reg = new RegExp("(^| )" + key + "=([^;]*)(;|$)");
-
-				if(a = document.cookie.match(reg)){
-					return unescape(a[2]);
-				}else{
-					return "";
-				}
-			},
-			/**
-			 * 移除
-			 * @method remove
-			 * @public
-			 * @param {string} key
-			 * @return void
-			 */
-			remove:function(key){
-			  var old=this.expires;
-			  this.expires = -1 * 1000 * 60 * 60 * 24 * 365;
-			  this.set(key,"expired");
-			  this.expires=old;
+	Cookie.prototype = {
+		/**
+		 * 存储
+		 * @method set
+		 * @param {string} key
+		 * @param {string} value
+		 * @return void
+		 */
+		set:function(key, value){
+			var now = new Date();
+			if(typeof(this.expires)=="number"){
+				now.setTime(now.getTime() + this.expires);
 			}
-		};
-	})();
+			document.cookie =
+				key + "=" + escape(value)
+				+ ";expires=" + now.toGMTString()
+				+ ";path="+ this.path
+				+ (this.domain == "" ? "" : ("; domain=" + this.domain))
+				+ (this.secure ? "; secure" : "");
+		},
+		/**
+		 * 读取
+		 * @method get
+		 * @param {string} key
+		 * @return string
+		 */
+		get:function(key){
+			var a, reg = new RegExp("(^| )" + key + "=([^;]*)(;|$)");
+			if(a = document.cookie.match(reg)){
+				return unescape(a[2]);
+			}else{
+				return "";
+			}
+		},
+		/*
+		 * 移除
+		 * @method remove
+		 * @param {string} key
+		 * @return void
+		 */
+		remove:function(key){
+			var old=this.expires;
+			this.expires = - 3600000 * 24 * 365;
+			this.set(key,"");
+			this.expires=old;
+		}
+	};
 
 
 	/**
@@ -96,12 +78,11 @@
 	 * @static
 	 * @param {string} key
 	 * @param {string} value
-	 * @param {object} option
+	 * @param {Json} options (Optional) 更多cookie参数
 	 * @return void
 	 */
-	Cookie.set=function(key,value,option){
-		var cookie = new Cookie(option); 
-		cookie.set(key,value);
+	Cookie.set=function(key,value,options){
+		new Cookie(options).set(key,value);
 	};
 
 	/**
@@ -109,13 +90,11 @@
 	 * @method get
 	 * @static
 	 * @param {string} key
-	 * @param {object} option
+	 * @param {Json} options (Optional) 更多cookie参数
 	 * @return string
 	 */
-	Cookie.get=function(key,option){
-		var cookie = new Cookie(option);
-		var ret = cookie.get(key);
-		return ret;
+	Cookie.get=function(key,options){
+		return new Cookie(options).get(key);
 	};
 
 	/**
@@ -123,13 +102,12 @@
 	 * @method set
 	 * @static
 	 * @param {string} key
-	 * @param {object} option
+	 * @param {Json} options (Optional) 更多cookie参数
 	 * @return void
 	 */
-	Cookie.remove=function(key,option){
-		var cookie = new Cookie(option);
-		cookie.remove(key);
+	Cookie.remove=function(key,options){
+		new Cookie(options).remove(key);
 	};
 
 	QW.provide('Cookie', Cookie);
-})();
+}());

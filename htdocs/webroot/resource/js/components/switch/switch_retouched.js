@@ -1,7 +1,7 @@
 /*
  *	Copyright (c) QWrap.
  *	version: $version$ $release$ released
- *  description: cache
+ *  description: ajax
 */
 
 (function() {
@@ -15,6 +15,6 @@
 		}
 	}
 
-	document.write('<script type="text/javascript" src="' + srcPath + 'components/cache/cookie.js"></script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'components/cache/storage.js"></script>');
+	document.write('<script type="text/javascript" src="' + srcPath + 'components/switch/switch.js"></script>');
+	document.write('<script type="text/javascript" src="' + srcPath + 'components/switch/switch_retouch.js"></script>');
 }());

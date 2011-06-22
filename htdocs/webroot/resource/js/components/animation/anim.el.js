@@ -1,12 +1,12 @@
 (function() {	
 	var Anim = QW.Anim,
 		extend = QW.ClassH.extend,
-		g = QW.Dom.g,
+		g = QW.NodeH.g,
 		mix = QW.ObjectH.mix,
-		isElement = QW.Dom.isElement,
+		isElement = QW.DomU.isElement,
 		setStyle = QW.NodeH.setStyle,
 		getStyle = QW.NodeH.getCurrentStyle,
-		map = Array.map || ArrayH.map;
+		map = Array.map || QW.ArrayH.map;
 	
 	function AnimAgent(el, opts, attr){ //用来辅助对opts进行标准化操作的私有类
 		this.el = el;

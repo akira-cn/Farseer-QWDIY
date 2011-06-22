@@ -1,85 +1,88 @@
 /*
- *	Copyright (c) 2010, Baidu Inc. All rights reserved.
- *	http://www.youa.com
- *	version: $version$ $release$ released
- *	author: quguangyu@baidu.com
+	Copyright (c) Baidu Youa Wed QWrap
+	version: $version$ $release$ released
+	author: Jerry(屈光宇)、JK(部分修改)
 */
+
 
 /**
  * @class Storage Storage类
  * @namespace QW
  */
  (function() { 
-	var Dom = QW.Dom,
-		mix = QW.ObjectH.mix,
-		extend = QW.ClassH.extend,
-		$ = Dom.g;
+	var ready = QW.DomU.ready,
+		g = QW.NodeH.g;
 
-	var BaseStorage = function(){};
-	BaseStorage.prototype = (function(){
-		return {
-			test : function(){
-				return true;
-			},
-			init : function(){
-			},
-			set : function(key, value){
-			},
-			get : function(key, callback){
-				callback && callback("");
-			},
-			remove : function(key){
+	var FlashStorage =(function() {
+		var flashId = '_Flash_Storage_',
+			flashEl = null,
+			flashPath = QW.PATH + 'components/cache/assets/cache.swf', //更多信息，参见：http://www.imququ.com/post/74.html
+			//flashPath = 'http://co.youa.baidu.com/picture/r/mall/js/cache.swf',
+			flashStatus = 0, //0还未添加、1还未loaded、2已成功能加载
+			flashCallbacks = [];
+		try {
+			if (external.max_language_id != undefined){  //解决遨游bug，参见http://www.imququ.com/post/52.html
+				flashPath += "?random=" + Math.random();
 			}
-		};
-	})();
-
-	var FlashStorage = extend(function(){}, BaseStorage);
-	mix(FlashStorage.prototype, (function() {
-		var flashId = "_Flash_Storage_";
-
-		var insertFlash = function(path){
+		} catch (ex){}
+		function insertFlash() { //添加flash
 			var container = document.createElement("div"), html = [];
 			if(QW.Browser.ie){
 				html.push('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"',
 					'codebase="http://download.macromedia.com/pub/shockwave/cabs',
 					'/flash/swflash.cab#version=10,0,0,0" width="1" height="1" id="',flashId,'">',
 					'<param name="allowScriptAccess" value="always" />',
-					'<param name="movie" value="',path,'" /></object>');
+					'<param name="movie" value="',flashPath,'" /></object>');
 			}else{
-				html.push('<embed src="',path,'" width="1" height="1" id="',flashId,'" ',
+				html.push('<embed src="',flashPath,'" width="1" height="1" id="',flashId,'" ',
 					'align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" ',
 					'pluginspage="http://www.adobe.com/go/getflashplayer_cn"/>');
 			}
 			var style = container.style;
 			style.position = "absolute";
 			style.top = "-9999px";
-			style.top = "-9999px";
-			var body = document.body;
-			body.insertBefore(container, body.firstChild );
+			var body=document.body;
+			body.insertBefore(container,body.firstChild);
 			container.innerHTML = html.join("");
-			document.title=document.title.split("#")[0];
-		};
-
-		var periodicalExecuter = function(timerEvent,callback){
-			callback = callback || function(){};
-			var timer = setInterval(function(){
-				try{
-					var ret = timerEvent();
-					clearInterval(timer);
-					timer = null;
-					callback(ret);
-				}catch(e){}
-			},50);
-			setTimeout(function(){
-				if(!timer) return;
-				clearInterval(timer);
-				callback("");
-			},5000);
-		};
+			flashEl = g(flashId);
+			document.title=document.title.split("#")[0]; //IE下flash会导致浏览器title加很多#
+		}
+		function periodicalExecuter(callback) {//执行器
+			switch (flashStatus)
+			{
+			case 0: //还未添加falsh元素
+				flashStatus=1;
+				ready(insertFlash); 
+				var flashInterval = setInterval(function(){
+					//alert(flashEl.set)
+					if (flashEl.set) {
+						clearInterval(flashInterval);
+						flashInterval= 0;
+						flashStatus = 2;
+						for(var i=0;i<flashCallbacks.length;i++){
+							try{
+								flashCallbacks[i]();
+							}
+							catch(ex) {
+								continue;
+							}
+						}
+						flashCallbacks.length = 0;
+					}
+				}, 20);
+			case 1: //flash未加载完成
+				flashCallbacks.push(callback);
+				break;
+			case 2: //flash已成功加载
+				callback();
+				break;
+			}
+		}
 
 		return {
-			test : function(){
-				var f = "-1", n = navigator;
+			storageType: 'flash',
+			test: function(){
+				var f = 0, n = navigator;
 				if(n.plugins && n.plugins.length) {
 					for (var ii = 0; ii < n.plugins.length; ii++) {
 						if (n.plugins[ii].name.indexOf("Shockwave Flash") != -1) {
@@ -88,120 +91,72 @@
 						}
 					}
 				}else if (window.ActiveXObject) {
-					for (var ii = 10; ii >= 2; ii--) {
-					  try{
-						if(new ActiveXObject("ShockwaveFlash.ShockwaveFlash." + ii)){
-							f = parseInt(ii);
-							break;
-						}
-					  }catch(ex){}
+					for (var ii = 15; ii > 7; ii--) {
+						try{
+							if (new ActiveXObject("ShockwaveFlash.ShockwaveFlash." + ii)) {
+								f = parseInt(ii);
+								break;
+							}
+						}catch(ex){}
 					}
 				}
 				return parseInt(f) > 7;
 			},
-			init : function(){
-				this.path = "http://co.youa.baidu.com/picture/r/mall/js/cache.swf";
-				try {
-					if (external.max_language_id != undefined){  
-						this.path += "?random=" + Math.random();
-					}
-				}catch (e){}
-				var path = this.path;
-				Dom.ready(function(){
-					insertFlash(path);
-				});
-			},
-			set : function(key, value){
+			set: function(key, value){
 				periodicalExecuter(function(){
-					$(flashId).set(key,value);
+					flashEl.set(key,value);
 				});
 			},
-			get : function(key, callback){
-				periodicalExecuter(function(){
-					return $(flashId).get(key);
-				},function(ret){
-					if(callback) {
-						callback.call(this, ret);
-					}
-					return ret;
-				});
-			},
-			remove : function(key){
-				periodicalExecuter(function(){
-					$(flashId).remove(key);
-				});
-			}
-		};
-	})(), true);
-	
-	var LocalStorage = extend(function(){}, BaseStorage);
-	mix(LocalStorage.prototype, (function() {
-		return {
-			test : function(){
-				return !!window.localStorage;
-			},
-			init : function(){
-				this.store = localStorage;
-			},
-			set : function(key, value){
-				this.store.setItem(key, value);
-			},
-			get : function(key, callback){
-				var val = this.store.getItem(key) || "";
+			get: function(key, callback){
 				if (callback) {
-					callback.call(this, val);
+					periodicalExecuter(function(){
+						callback && callback(flashEl.get(key));
+					});
 				}
-				return val;
+				if (flashStatus == 2) return flashEl.get(key); //如果能即时返回get值的话，也即时返回get值，满足同步的要求
 			},
-			remove : function(key){
-				this.store.removeItem(key);
+			remove: function(key){
+				periodicalExecuter(function(){
+					flashEl.remove(key);
+				});
 			}
 		};
-	})(), true);
-
-	function Storage(){
-		var list = arguments.length>0?Array.toArray(arguments):["localStorage","flash"];
-		list.push("none");
-		var instance = null;
-		for(var i = 0; i < list.length; i++) {
-			switch(list[i]){
-				case "localStorage":
-					instance = LocalStorage;
-					break;
-				case "flash":
-					instance = FlashStorage;
-					break;
-				default:
-					instance = BaseStorage;
+		
+	}());
+	
+	var localStorage = window.localStorage;
+	var LocalStorage = {
+		storageType: 'local',
+		test: function(){
+			return !!localStorage;
+		},
+		set : function(key, value){
+			localStorage.setItem(key, value);
+		},
+		get: function(key, callback){
+			var val = localStorage.getItem(key);
+			if (callback) {
+				callback(val);
 			}
-			instance = new instance();
-			if(instance.test()){
-				instance.init();
-				instance.storageType = list[i];
-				break;
-			}
+			return val;
+		},
+		remove: function(key){
+			localStorage.removeItem(key);
 		}
-		return instance;
 	};
 
-	mix(Storage, (function() {
-		var storage = new Storage();
-		return {
-			storageType : storage.storageType,
-
-			set : function(key, value) {
-				storage.set(key, value);
-			},
-
-			get : function(key, callback) {
-				return storage.get(key, callback);
-			},
-
-			remove : function(key) {
-				storage.remove(key);
-			}
+	var Storage = null,
+		list = [LocalStorage,FlashStorage];
+	for(var i = 0; i < list.length; i++) {
+		if(list[i].test()){
+			Storage = list[i];
+			break;
 		}
-	})());
+	}
+	QW.provide({
+		'Storage':Storage,
+		'FlashStorage': FlashStorage,
+		'LocalStorage': LocalStorage
+	});
 
-	window.Storage = Storage;
  })();

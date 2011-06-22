@@ -1,5 +1,5 @@
 (function() {
-	var srcPath = "../"
+	var srcPath = "../../animation/"
 
 	document.write(
 		  '<script type="text/javascript" src="'+srcPath+'anim.frame.js"></script>'
