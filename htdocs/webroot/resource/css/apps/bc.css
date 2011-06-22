@@ -1,17 +1,31 @@
 /*
-Copyright (c) 2009, Baidu Inc. All rights reserved.
-version: 2.0.0.0
+Copyright (c) 2011, SNDA INN. All rights reserved.
+version: $version
+author: akira
 */
+
+/*reset基本文字的样式、行高等*/
+@import url("../core/reset.css");
+/*基本的版式布局*/
+@import url("../core/base.css");
+/*reset的反向操作
+  从外部抓来的html、富文本编辑器内容，需要嵌套一个 class="unreset" 的容器
+ */
+@import url("../core/unreset");
+
 /*
-通过以下update-tag，来解决common与core不是同时提测的问题
-update-tag: core/* tag001
-update-tag: common/* tag001
+	网格使用
+	@import url("../core/grid.css");
 */
-@import url("../core/reset-font.css");
-@import url("../core/richtext.css");
-@import url("../core/grid.css");
-@import url("../common/rules.css");
-@import url("../common/panel.css");
-@import url("../common/unit.css");
+
+/*  支持HTML5
+	@import url("../core/html5.css");
+*/
+
+/* 表单通用样式 */
 @import url("../common/form.css");
-@import url("../common/widget.css");
+
+/*@import url("../common/widget.css");*/
+
+/* 通用部分 */
+@import url("../common/util.css");

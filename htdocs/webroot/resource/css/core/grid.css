@@ -1,13 +1,7 @@
 /*
-Copyright (c) 2009, Baidu Inc. All rights reserved.
-version: 2.0.0.0
+Copyright (c) 2011, SNDA Inn. All rights reserved.
+version: $version
 */
-/**
- * BBlib Grid
- * @module grid
- * @namespace
- * @requires not request
- */
 .bb-g {
     letter-spacing: -0.31em; /* webkit: collapse white-space between units */
     *letter-spacing: normal; /* reset IE < 8 */

@@ -235,9 +235,8 @@
 			for (var i = 0, len = props.length; i < len; i++) {
 				if (i in props) {
 					var key = props[i];
-					if(key in obj){
+					if(key in obj)
 						ret[key] = obj[key];
-					}
 				}
 			}
 			return ret;

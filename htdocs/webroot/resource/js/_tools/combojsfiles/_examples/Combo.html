@@ -15,31 +15,61 @@ var ComboJsFilesTool=(function(){
 
 	function read(drvPath)
 	{
-		var fso,f;
+		/*var fso,f;
 		fso = new ActiveXObject("Scripting.FileSystemObject");
 		f = fso.OpenTextFile(drvPath);
-		return (f.readAll())
+		return (f.readAll())*/
+
+         if(window.ActiveXObject){    
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");    
+            isie = true;    
+         }else if(window.XMLHttpRequest){    
+            xmlHttp = new XMLHttpRequest();    
+         }  
+         try{     
+			 xmlHttp.open("GET", drvPath, false);    
+			 xmlHttp.send(null);    
+			 if(xmlHttp.readyState == 4){            
+				 if (xmlHttp.status == 200 || xmlHttp.status == 0){    
+					return xmlHttp.responseText;   
+				 }    
+			 }      
+         }catch(exception){    
+             document.write('exception:'+exception.message);    
+         }    
 	};
+
 	ComboJsFilesTool.combo=function(){
-		var s=[],
-			files=g('files').value.split(/[\r\n]+/),
-			basePath=g('basePath').value;
+		var s = [],
+			files = g('seed').value.match(/\s*document.write.*\n/g),
+			basePath = g('basePath').value;
+		
 		for(var i=0;i<files.length;i++){
-			var sFile=files[i];
+			var sFile=files[i].replace(/\s*/g,'');
 			s.push('\/\/'+sFile+'\n');
 			sFile=sFile.match(/\'[\w\/.]+\.js/ig);
 			if(sFile) sFile=(sFile+'').substr(1);
-			//alert(sFile);
 			var content=read(basePath+'/'+sFile)+'';
 			s.push(content + ((/\;\s*$/.test(content))?'\n\n':';\n\n') );
 		}
+
 		g('comboresult').value=s.join('\n');
 	};
 
+	ComboJsFilesTool.open=function(){
+		var appfile = g('appfile').value,
+			seed = g('seed');
+
+		if(!appfile){ 
+			alert("请选择要打开的文件");
+			return false;
+		}
+		basePath.value = appfile.replace(/\\apps\\(.*)/g,"\\");
+		var seed_content = read(appfile);
+		seed.value = seed_content;
+	};
+
 	return ComboJsFilesTool;
-
-
-
 })();
 
 
@@ -56,29 +86,10 @@ var ComboJsFilesTool=(function(){
 	<div id="bd" >
 		<div class="section-ctn">
 		<ul>
-			<li>路径：<br><input id=basePath style="width:700px" value="E:/BaiduSvn/eb/wed/trunk/qwrap/resource/js"/></li>
-			<li>内容：<br><textarea id=files style="width:700px;height:300px" >	document.write('<script type="text/javascript" src="' + srcPath + 'core/core_base.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/module.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/browser.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/string.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/object.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/array.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/hashset.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/date.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/function.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/class.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/helper.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'core/custevent.js"><\/script>');
-
-	document.write('<script type="text/javascript" src="' + srcPath + 'dom/selector.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'dom/dom.u.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'dom/node.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'dom/node.w.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'dom/event.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'dom/event.w.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'dom/eventtarget.h.js"><\/script>');
-	document.write('<script type="text/javascript" src="' + srcPath + 'dom/jss.js"><\/script>');
-</textarea></li>
+			<li>app file：<br><input type="file" id="appfile" style="width:700px" onchange="ComboJsFilesTool.open()"/></li>
+			<li>根文件夹：<br><input id="basePath" style="width:700px" onchange="ComboJsFilesTool.open()"/></li>
+			<li>内容：<br><textarea id=seed style="width:700px;height:180px" >/* 打开要处理的app文件 */
+			</textarea></li>
 
 			<li>合并：<input type=button value="合并" onclick="ComboJsFilesTool.combo()"/></li>
 			<li>结果：<br><textarea id=comboresult style="width:700px;height:300px" >

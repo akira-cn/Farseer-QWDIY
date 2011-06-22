@@ -1,13 +1,9 @@
 /*
-Copyright (c) 2009, Baidu Inc. All rights reserved.
-version: 2.0.0.0
+Copyright (c) 2011, SNDA Inn. All rights reserved.
+version: $version
 */
 /**
- * BBlib Form
- * @module form
- * @namespace
- * @requires not request
- * @example
+ * example:
 <form action="" method="get" class="form">
 	<ul>
 		<li><label class="k" for="a1"><span class="em">*</span> 姓名：</label><span class="v"><input type="text" id="a1" name="name"> <em>提示文字</em></span></li>
