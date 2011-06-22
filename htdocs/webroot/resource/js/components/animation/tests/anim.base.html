@@ -12,10 +12,10 @@ div#animated { position: absolute; left: 10px; top: 60px; padding: 50px;
 <script>
 //alert(QW.Anim);
 function animate(per) {
-  document.getElementById("animated").style.left = per * 200 + "px";
+  document.getElementById("animated").style.left = 10 + per * 200 + "px";
 }
 
-var anim = new Anim(animate);
+var anim = new Anim(animate,3000);
 
 function start(){
 	anim.start();

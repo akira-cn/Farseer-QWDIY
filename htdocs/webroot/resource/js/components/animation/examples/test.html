@@ -22,7 +22,7 @@
 				var container = QW.Dom.g("container");
 				container.innerHTML = "";
 				var easing = new Function("p","d",QW.Dom.g("txt").value);
-				var ef = new QW.Effect(function(per){
+				var ef = new QW.Anim(function(per){
 					var x = parseInt(550*per)-2;
 					var y = parseInt(easing(per,400))-2;
 					var d = document.createElement("div");
@@ -36,11 +36,11 @@
 						bottom = y+"px";
 					};
 					container.appendChild(d);
-				}, 5000 , {byStep : false});
-				ef.onsuspend = function(){
+				}, 5000);
+				ef.onend = function(){
 					btn.disabled = false;
 				};
-				ef.play();
+				ef.start();
 			});
 		};
 	</script>

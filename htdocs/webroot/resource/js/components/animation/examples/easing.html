@@ -21,6 +21,7 @@
 			NodeW = QW.NodeW;
 		window.onload = function(){
 			var easings = QW.ObjectH.values(Anim.Easing);
+			var anims = [];
 
 			Dom.query(".move").forEach(function(el, i) {
 				NodeW(el).on("click",function(e){
@@ -28,19 +29,38 @@
 						left : {
 							by : 500
 						}
-					}, 2000, easings[i]);
+					}, 5000, easings[i]);
 					anim.onend = function(){
 						setTimeout(function(){
 							anim.reset();		//动画结束后500ms复原
 						}, 500);
+
+						NodeW('input.play').removeAttr('disabled');
 					};
 					anim.start();
+					anims.push(anim);
 				});
 			});
 
-			NodeW('input[type="button"]').on("click",function(e) {
+			NodeW('input.play').on("click",function(e) {
 				e.preventDefault();
 				NodeW(".move").fire("click");
+				NodeW('input.pause').removeAttr('disabled');
+				NodeW('input.play').attr('disabled', 'disabled');
+			});
+
+			NodeW('input.pause').on("click",function(e) {
+				e.preventDefault();
+				anims.forEach(function(anim) { anim.pause(); });
+				NodeW('input.resume').removeAttr('disabled');
+				NodeW('input.pause').attr('disabled', 'disabled');
+			});
+
+			NodeW('input.resume').on("click",function(e) {
+				e.preventDefault();
+				anims.forEach(function(anim) { anim.resume(); });
+				NodeW('input.resume').attr('disabled', 'disabled');
+				NodeW('input.pause').removeAttr('disabled');
 			});
 
 		};
@@ -48,7 +68,9 @@
     </head>
 	<body>
 		<h2>动画类算子</h2>
-		<p>点击蓝色方块开始播放，或者<input type="button" value="全部播放"></p>
+		<p>点击蓝色方块开始播放，或者<input class="play" type="button" value="全部播放">&nbsp;&nbsp;
+		<input disabled="disabled" class="pause" type="button" value="全部暂停">&nbsp;&nbsp;
+		<input disabled="disabled" class="resume" type="button" value="全部继续"></p>
 		<dl>
 			<dt>1.Anim.Easing.easeNone（匀速）</dt>
 			<dd><div class="container"><div class="move"></div></div></dd>
@@ -83,6 +105,8 @@
 			<dt>16.Anim.Easing.bounceBoth（跳动开始跳动结束）</dt>
 			<dd><div class="container"><div class="move"></div></div></dd>
 		</dl>
-		<p>点击蓝色方块开始播放，或者<input type="button" value="全部播放"></p>
+		<p>点击蓝色方块开始播放，或者<input class="play" type="button" value="全部播放">&nbsp;&nbsp;
+		<input disabled="disabled" class="pause" type="button" value="全部暂停">&nbsp;&nbsp;
+		<input disabled="disabled" class="resume" type="button" value="全部继续"></p>
 	</body>
 </html>

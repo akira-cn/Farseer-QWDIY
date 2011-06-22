@@ -203,7 +203,7 @@
 			</div>
 		<script type="text/javascript">
 		//<![CDATA[
-			var Scroll = QW.ScrollAnim,
+			var Scroll = QW.ElAnim,
 				Dom = QW.Dom,
 				NodeW = QW.NodeW,
 				$ = Dom.g;
@@ -224,11 +224,11 @@
 						return -d/2 * (Math.cos(Math.PI*p) - 1);
 					});
 
-					anim1.onsuspend = function(){
+					anim1.onend = function(){
 						isRun = false;
 					}
 
-					anim1.play();
+					anim1.start();
 					return false;
 				};
 				$("r").onclick = function(){
@@ -245,11 +245,11 @@
 						return -d/2 * (Math.cos(Math.PI*p) - 1);
 					});
 
-					anim2.onsuspend = function(){
+					anim2.onend = function(){
 						isRun = false;
 					}
 
-					anim2.play();
+					anim2.start();
 					return false;
 				};
 			};

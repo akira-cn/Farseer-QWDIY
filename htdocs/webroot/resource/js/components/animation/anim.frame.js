@@ -19,8 +19,6 @@ var mix = QW.ObjectH.mix,
 var requestAnimationFrame = window.requestAnimationFrame,
 	cancelRequestAnimationFrame = window.cancelRequestAnimationFrame;
 
-var handlers = [];
-
 function getAnimationFrame(){
 	if(requestAnimationFrame){
 		return {
@@ -32,36 +30,14 @@ function getAnimationFrame(){
 			request : window.webkitRequestAnimationFrame,
 			cancel : window.webkitCancelRequestAnimationFrame
 		}
-	}else if(window.mozRequestAnimationFrame){
-		return {
-			request : function(callback){
-				if(false !== callback.__cancelled__){
-					callback.__cancelled__ = false;
-					var _step = function(evt){
-						return callback(evt.timeStamp);
-					}
-					_step.handler = callback;
-					handlers.push(_step);
-					EventTargetH.addEventListener(window, "MozBeforePaint", _step);
-				}
-				window.mozRequestAnimationFrame();
-				return handlers.length;
-			},
-			cancel : function(id){
-				var _step = handlers[id-1];
-				handlers[id] = "cancelled";
-				_step.handler.__cancelled__ = true;
-				EventTargetH.removeEventListener(window, "MozBeforePaint", _step);
-			}
-		}
 	}else{
 		return AnimationTimingManager;
 	}
 };
 
+
 if(!(window.requestAnimationFrame || 
-	 window.webkitRequestAnimationFrame ||
-	 window.mozRequestAnimationFrame))
+	 window.webkitRequestAnimationFrame))
 {
 	var AnimationTimingManager = (function(){
 		var millisec = 25;	 //40fps;
@@ -78,13 +54,16 @@ if(!(window.requestAnimationFrame ||
 					return o(new Date());
 			});
 		}
-
-		var interval = window.setInterval(playAll, millisec);
+		
+		if(window.mozRequestAnimationFrame)
+			window.addEventListener("MozBeforePaint", playAll, false);
+		else
+			window.setInterval(playAll, millisec);
 
 		return {
 			request : function(handler){
 				request_handlers.push(handler);
-				//return request_handlers.length;
+				if(window.mozRequestAnimationFrame) window.mozRequestAnimationFrame();
 				return id++;
 			},
 			cancel : function(id){

@@ -65,7 +65,7 @@
 				anim.start();
 			},
 			shine4Error : function(el, dur, callback) {
-				var anim = new ColorAnim(el, {
+				var anim = new Anim(el, {
 					"backgroundColor" : {
 						from : "#f33",
 						to	 : "#fff",
