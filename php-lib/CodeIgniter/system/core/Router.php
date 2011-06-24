@@ -159,7 +159,13 @@ class CI_Router {
 		{
 			$this->set_class($this->default_controller);
 			$this->set_method('index');
-			$this->_set_request(array(SSI_APP_NAME,$this->default_controller, 'index'));
+
+			if(SSI_APP_NAME){
+				$this->_set_request(array(SSI_APP_NAME,$this->default_controller, 'index'));
+			}
+			else{
+				$this->_set_request(array($this->default_controller, 'index'));
+			}
 			//modify by akira to support app-path
 		}
 
@@ -223,7 +229,10 @@ class CI_Router {
 	 */
 	function _validate_request($segments)
 	{
-		array_shift($segments); //modified by akira to support app-path
+		if(SSI_APP_NAME){
+			array_shift($segments); 
+		}
+		//modified by akira to support app-path
 
 		if (count($segments) == 0)
 		{

@@ -21,7 +21,7 @@
 	var CustEvent = function(target, type, eventArgs) {
 		this.target = target;
 		this.type = type;
-		mix(this, eventArgs || {});
+		mix(this, eventArgs || {}, true); //支持自定义类型的覆盖
 	};
 
 	mix(CustEvent.prototype, {

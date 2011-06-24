@@ -1,0 +1,5 @@
+(function() {
+	var	srcPath = '../../';
+	document.write(
+		'<script type="text/javascript" src="' + srcPath + '3rd/JSSpec/JSSpec.js"></script>');
+})();

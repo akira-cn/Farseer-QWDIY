@@ -17,7 +17,7 @@
 				}, dur);
 				
 				W(el).show();
-				anim.on("end", callback);
+				if(callback) anim.on("end", callback);
 				anim.start();
 			},
 			fadeOut : function(el, dur, callback) {
@@ -31,8 +31,12 @@
 				anim.on("end", function(){
 					W(el).hide(); 
 				});
-				anim.on("end", callback);
+				if(callback) anim.on("end", callback);
 				anim.start();
+			},
+			/* 淡入/淡出切换 */
+			fadeToggle: function(el, dur, callback) {
+				AnimElH[el.offsetHeight ? 'fadeOut' : 'fadeIn'](el, dur, callback);
 			},
 			slideUp : function(el, dur, callback) {
 				var anim = new Anim(el, {
@@ -44,7 +48,7 @@
 				anim.on("end", function(){
 						W(el).hide();
 				});
-				anim.on("end", callback);
+				if(callback) anim.on("end", callback);
 				anim.start();
 			},
 			slideDown : function(el, dur, callback) {
@@ -61,21 +65,21 @@
 					}
 				}, dur);
 
-				anim.on("end", callback);
+				if(callback) anim.on("end", callback);
 				anim.start();
 			},
 			shine4Error : function(el, dur, callback) {
 				var anim = new Anim(el, {
 					"backgroundColor" : {
 						from : "#f33",
-						to	 : "#fff",
+						to	 : "#fff"
 					}
 				}, dur);
 
 				anim.on("end", function(){
 					W(el).setStyle("backgroundColor", "");
 				});
-				anim.on("end", callback);
+				if(callback) anim.on("end", callback);
 				anim.start();
 			}
 		};

@@ -1,0 +1,35 @@
+/*
+Copyright (c) 2011, SNDA INN. All rights reserved.
+version: $version
+author: akira
+*/
+
+/*reset基本文字的样式、行高等*/
+@import url("../../core/reset/reset.css");
+/*基本的版式布局*/
+@import url("../../core/base/base.css");
+/*reset的反向操作
+  从外部抓来的html、富文本编辑器内容，需要嵌套一个 class="unreset" 的容器
+ */
+/*@import url("../core/reset/unreset.css");*/
+
+/*网格使用*/
+@import url("../../core/grids/grids.css");
+
+
+/*  支持HTML5
+	@import url("../core/html5.css");
+*/
+
+/* 表单通用样式 */
+@import url("../../common/form.css");
+
+/*@import url("../common/widget.css");*/
+
+/* 通用部分 */
+@import url("../../common/util.css");
+
+body {
+    margin: auto; /* center in viewport */
+    width: 960px;
+}

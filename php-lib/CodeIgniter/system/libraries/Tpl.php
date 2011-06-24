@@ -70,6 +70,10 @@ class Tpl extends Smarty {
 		if (!file_exists($this->template_dir.$tpl)) {
 			$tpl = $tpl.".tpl";
 		}
+		/*$this->assign("data", $data);
+		$this->display($tpl);
+		flush();
+		sleep(1);*/
 		array_push(
 			$this->modules,
 			array(

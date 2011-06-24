@@ -1,0 +1,50 @@
+<?php
+    function TextC($n1,$n2) {
+        $text = "壹,貳,參,肆,伍,陸,柒,捌,玖,拾";
+        $text = split(",",$text);
+        $n = rand($n1,$n2);
+        $t="";
+        $i=0;
+        while( $i <  $n) {
+            $t .= $text[ $i%count($text)    ];
+            $i++;
+        }
+        return $t;
+    }
+    function Text($n1,$n2) {
+        $text = "Lorem,Ipsum,is,simply,dummy,text,of,the,printing,and,typesetting,industry.,Lorem,Ipsum,has,been,the,industry's,standard,dummy,text,ever,since,the,1500s,,when,an,unknown,printer,took,a,galley,of,type,and,scrambl";
+        $text = split(",",$text);
+        $n = rand($n1,$n2);
+        $t="";
+        $i=0;
+        while($i <  $n) {
+            $t .= $text[ $i%count($text)    ]  . ' ';
+            $i++;
+        }
+        return $t;
+    }
+    function insert($file_path) {
+        global $FileName;
+            global $vName;
+            global $vCadd;
+            global $vEadd;
+            global $vCity;
+            global $vOhour;
+            global $vEntr;
+            global $vTele;
+            global $vWeb;
+            global $vEinfo;
+            global $vType;
+            global $vMusic;        
+            global $vDesc;
+            global $vMap;
+            global $vLogo;
+            global $vImg;
+        echo "\n<!--(begin)". $file_path . "-->\n";
+        include($file_path);
+        echo "\n<!--(end) ". $file_path . "-->\n";
+    }
+    
+    $UserAgent =  split(";",getenv("HTTP_USER_AGENT"));//Debug Information for WebDev
+    $UserAgent = $UserAgent[1] . "___";
+?>
