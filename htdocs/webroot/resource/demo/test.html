@@ -1,0 +1,566 @@
+<!doctype html>
+<html>
+	<head>
+	<title> new document </title>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<base target=_blank></base>
+
+<!--[if IE 6]>
+   <style type="text/css">
+   /*<![CDATA[*/ 
+		html {overflow-x:auto; overflow-y:hidden;} /*用来隐藏html的滚动条*/
+		body {
+			margin:0;  /* 必须 */
+			border:0; 
+			height:100%; /* 必须 */
+			overflow-y:auto;/* 必须 */
+		}
+  /*]]>*/
+   </style>
+	<script type=”text/javascript”>
+		document.execCommand(“BackgroundImageCache”, false, true);
+	</script>
+<![endif]-->	
+		<style type="text/css">
+		
+		/*reset*/
+		html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
+
+		/* reset fonts */
+		body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+		
+		/* yui3-grids */
+		.yui3-g{letter-spacing:-0.31em;*letter-spacing:normal;word-spacing:-0.43em;}.yui3-u,.yui3-u-1,.yui3-u-1-2,.yui3-u-1-3,.yui3-u-2-3,.yui3-u-1-4,.yui3-u-3-4,.yui3-u-1-5,.yui3-u-2-5,.yui3-u-3-5,.yui3-u-4-5,.yui3-u-1-6,.yui3-u-5-6,.yui3-u-1-8,.yui3-u-3-8,.yui3-u-5-8,.yui3-u-7-8,.yui3-u-1-12,.yui3-u-5-12,.yui3-u-7-12,.yui3-u-11-12,.yui3-u-1-24,.yui3-u-5-24,.yui3-u-7-24,.yui3-u-11-24,.yui3-u-13-24,.yui3-u-17-24,.yui3-u-19-24,.yui3-u-23-24{display:inline-block;zoom:1;*display:inline;letter-spacing:normal;word-spacing:normal;vertical-align:top;}.yui3-u-1{display:block;}.yui3-u-1-2{width:50%;}.yui3-u-1-3{width:33.33333%;}.yui3-u-2-3{width:66.66666%;}.yui3-u-1-4{width:25%;}.yui3-u-3-4{width:75%;}.yui3-u-1-5{width:20%;}.yui3-u-2-5{width:40%;}.yui3-u-3-5{width:60%;}.yui3-u-4-5{width:80%;}.yui3-u-1-6{width:16.656%;}.yui3-u-5-6{width:83.33%;}.yui3-u-1-8{width:12.5%;}.yui3-u-3-8{width:37.5%;}.yui3-u-5-8{width:62.5%;}.yui3-u-7-8{width:87.5%;}.yui3-u-1-12{width:8.3333%;}.yui3-u-5-12{width:41.6666%;}.yui3-u-7-12{width:58.3333%;}.yui3-u-11-12{width:91.6666%;}.yui3-u-1-24{width:4.1666%;}.yui3-u-5-24{width:20.8333%;}.yui3-u-7-24{width:29.1666%;}.yui3-u-11-24{width:45.8333%;}.yui3-u-13-24{width:54.1666%;}.yui3-u-17-24{width:70.8333%;}.yui3-u-19-24{width:79.1666%;}.yui3-u-23-24{width:95.8333%;}
+		
+
+		.doc{
+			height:800px;
+		}
+		
+		.yui3-g{
+			width:960px;
+			margin:auto;
+		}
+
+		#playlist-bar {
+			position:fixed;
+			 _position:absolute;/*利用hack方式处理IE6*/
+
+			bottom:0px;
+			width:100%;
+			
+			background-color:#6d6d6d;
+			/*height:130px;*/
+
+			z-index:1000;
+			-moz-box-shadow:0 0 3px #999;
+			-webkit-box-shadow:0 0 3px #999;
+			box-shadow:0 0 3px #999;
+			/*-moz-transition:bottom .13s ease-in-out;
+			-o-transition:bottom .13s ease-in-out;
+			-webkit-transition:bottom .13s ease-in-out;*/
+		}
+		
+		#playlist-bar-main{
+			height:100px;
+		}
+		#playlist-bar-mask {
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:140px;
+			opacity:0;
+			filter:alpha(opacity=0);
+			display:none;
+			z-index:-1;
+			_display:block !important;
+		}
+
+		#playlist-bar-nav {
+			height:28px;
+			background-color:#f3f3f3;
+			border-top:solid 1px #cccccc;
+		}
+
+		#playlist-left-buttons{
+			float:left;
+		}
+
+		#playlist-bar-nav {
+			position: relative;
+			padding:0;
+			color: #000;
+			border: 1px solid #ccc;
+			border-width: 1px 0;
+			background: #f6f6f6;
+			background-image: -moz-linear-gradient(top,#ffffff,#efefef);
+			background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#efefef));
+			-moz-box-shadow: 0 4px 5px #444;
+			-webkit-box-shadow: 0 4px 5px #444;
+			box-shadow: 0 4px 5px #444;
+			
+			cursor:pointer;
+		}
+
+		#playlist-left-buttons .playlist-button-wrapper{
+			float:left;
+			height:23px;
+			border-right:solid 1px #ccc;
+			padding-left:10px;
+			padding-right:10px;
+			padding-top: 5px;
+		}
+
+		#playlist-right-buttons .playlist-button-wrapper{
+			float:right;
+			height:23px;
+			border-left:solid 1px #ccc;
+			padding-left:10px;
+			padding-right:10px;
+			padding-top: 5px;
+		}
+		.playlist-bar-button{
+			border:0 none;
+			width:17px;
+			height:18px;
+			cursor:pointer;
+		}
+		#playlist-button-prev button{
+			background:no-repeat url(icons.png) -91px -73px;
+		}
+		#playlist-button-next button{
+			background:no-repeat url(icons.png) -146px -320px;
+		}
+		#playlist-button-arrow button{
+			background:no-repeat url(icons.png) -35px -135px;
+		}
+		#playlist-button-autoplay button{
+			background:no-repeat url(icons.png) -37px -53px;
+		}	
+		#playlist-button-autoplay button{
+			background:no-repeat url(icons.png) -37px -53px;
+		}	
+		.playlist-autoplay-on #playlist-button-autoplay button{
+			background:no-repeat url(icons.png) -2px -18px;
+		}	
+		.playlist-random-on #playlist-button-random button{
+			background:no-repeat url(icons.png) -110px -98px;
+		}	
+		#playlist-button-random button{
+			background:no-repeat url(icons.png) -0px -0px;
+			width:22px;
+		}	
+		.playlist-bar-show #playlist-button-toggle button{
+			background:no-repeat url(icons.png) -57px -52px;
+		}	
+		.playlist-bar-hide #playlist-button-toggle button{
+			background:no-repeat url(icons.png) -0px -325px;
+		}	
+		#playlist-right-buttons{
+			float:right;
+		}
+		
+		button{
+			background:transparent;
+		}
+
+		#playlist-button-option{
+			border:0 none;
+			cursor:pointer;
+			font-weight: normal;
+			margin-left: 0.25em;
+			line-height: 1.3333em;
+			background:transparent;
+			filter:alpha(opacity=60);
+			-moz-opacity:.60;
+			opacity:0.6
+		}
+
+		#playlist-extra-menu{
+			float:left;
+			display:none;
+			position:absolute;
+			margin-left:-68px;
+			margin-top:-69px;
+			width:138px; 
+			border: 1px solid #ccc;
+			border-width: 1px 1px 0px 1px;
+			background: #f6f6f6;
+			-moz-box-shadow: 0 0px 5px #444;
+			-webkit-box-shadow: 0 0px 5px #444;
+			box-shadow: 0 0px 2px #444;
+			padding: 3px 3px 3px 3px;
+		}
+		#playlist-extra-menu ul{
+			list-style:none;
+			line-height: 2.3333em;
+		} 
+
+		.playlist-autoplay-on #playlist-button-autoplay,
+		.playlist-random-on #playlist-button-random{
+			border-bottom: medium none;
+			border-radius: 0 0 0 0;
+			border-top: medium none;
+			color: #666666;
+			height: 25px;
+			line-height: 18px;
+			text-shadow: 0 0 1px #FFFFFF;
+			vertical-align: top;
+			background: -moz-linear-gradient(center top , #595959, #A6A6A6) repeat scroll 0 0 #777777;
+			background-image: -webkit-gradient(linear,left top,left bottom,from(#595959),to(#A6A6A6));
+			background-color: #777777;
+			border-color: #999999;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+		}
+
+		#playlist-main-prev{
+			float:left;
+			width:30px;
+			height:100%;
+			margin-left:-100%;
+			background-color:#666666;
+			cursor:pointer;
+		}
+
+		#playlist-main-current{
+			float:left;
+			margin-left:0px;
+			width:100%;
+			height:100%;
+			background-color:#555555;
+		}
+
+		#playlist-main-next{
+			float:right;
+			width:30px;
+			height:100%;
+			margin-left:-30px;
+			background-color:#666666;
+			cursor:pointer;
+		}
+		
+		#playlist-videolist-title{
+			color:white;
+			height:25px;
+			padding:5px 40px 0 40px;
+		}
+
+		#playlist-videolist{
+			line-style:none;
+			float:left;
+			padding:0 35px 0 35px;
+		}
+
+		.playlist-video{ /*64*106*/
+			float:left;
+			display:inline;
+			width:106px;
+			height:64px;
+			border:solid 1px #fff;
+			margin:0 5px 0 5px;
+			cursor:pointer;
+		}
+		
+		.playlist-video-selected,
+		.playlist-video-hover{
+			background-color:white;
+		}
+
+		.playlist-video-window{
+			float:left;
+			margin:5px;
+			width:96px;
+			height:54px;
+			background-color:#777;
+		}
+		
+		#playlist-videolist-scroller{/*控制视频横向滚动*/
+			float:left;
+			width:100%;
+			overflow-x:hidden;
+		}
+
+		#playlist-videolist-main{
+			float:left;
+			width:10000px; /*主体延伸出去的部分*/
+		}
+
+		#playlist-videolist-body{
+			float:left;  /*里面这一层用来计算实际的最大宽度*/
+		}
+
+		/* hack for firefox*/
+		@-moz-document url-prefix(){
+			#playlist-left-buttons .playlist-button-wrapper{
+				padding-top: 0px;
+				height:28px;
+			}
+			#playlist-right-buttons .playlist-button-wrapper{
+				padding-top: 0px;
+				height:28px;
+			}
+			.playlist-button-wrapper a,#playlist-button-option span{
+				float:left;
+				margin-top:3px;
+			}
+			#playlist-extra-menu{
+				margin-left:-72px;
+			}
+		}
+		/* webkit */ 
+		@media screen and (-webkit-min-device-pixel-ratio:0){ 
+			#playlist-extra-menu{
+				margin-left:-72px;
+			}
+		}
+		</style>
+
+		<script type="text/javascript" src="../js/apps/core_dom_youa.js"></script>
+		<script type="text/javascript" src="../js/components/animation/anim.js"></script>
+	</head>
+
+	<body id="index"> <!--page body的唯一标识-->
+		<div class="doc">
+			<div class="yui3-g">
+				<div class="yui3-u-2-3">
+					aaaa
+				</div>
+				<div class="yui3-u-1-3">
+					bbbb
+				</div>
+			</div>
+			<div class="footer"></div>
+			<div id="playlist-bar" class="playlist-bar-show playlist-autoplay-off playlist-random-off">
+				<!--盖住flash-->
+				<iframe frameborder="0" id="playlist-bar-mask" src="javascript:''">
+				</iframe>
+				<div class="header">
+					<div id="playlist-bar-nav">
+						<span id="playlist-left-buttons">
+							<span id="playlist-button-prev" class="playlist-button-wrapper">
+								<button class="playlist-bar-button">
+									
+								</button>
+							</span>
+							<span id="playlist-button-next" class="playlist-button-wrapper">
+								<button class="playlist-bar-button">
+								
+								</button>
+							</span>
+							<span class="playlist-button-wrapper">
+								<a href="#">Season 1(3)</a>
+							</span>
+							<span class="playlist-button-wrapper" id="playlist-button-option">
+								<span id="playlist-button-arrow">
+									<span>选项</span>
+									<button class="playlist-bar-button">
+									</button>
+								</span>
+							</span>
+							<span id="playlist-extra-menu">
+								<ul style= "list-style-type:none; ">
+									<li>关于此播放列表的详情</li>
+									<li>了解详情</li>
+								</ul>
+							</span>
+						</span>
+						<span id="playlist-right-buttons">
+							<span id="playlist-button-toggle" class="playlist-button-wrapper">
+								<button class="playlist-bar-button">
+									
+								</button>
+							</span>		
+							<span id="playlist-button-random" class="playlist-button-wrapper">
+								<button class="playlist-bar-button">
+									
+								</button>
+							</span>	
+							<span id="playlist-button-autoplay" class="playlist-button-wrapper">
+								<button class="playlist-bar-button">
+									
+								</button>
+							</span>	
+							<!--<span id="playlist-button-slideup" class="playlist-button-wrapper">
+								<button class="playlist-bar-button">
+									
+								</button>
+							</span>	-->
+						</span>
+					</div>
+				</div>
+				<div id="playlist-bar-main">
+					<div id="playlist-main-current">
+						<h1 id="playlist-videolist-title">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h1>
+						<div id="playlist-videolist-scroller">
+							<div id="playlist-videolist-main">
+								<div id="playlist-videolist-body">
+									<ol id="playlist-videolist">
+										<li id="video-01" class="playlist-video playlist-video-selected" title="<%$data.title[0]%>">
+											<div class="playlist-video-window">
+												
+											</div>
+										</li>
+										<li id="video-02" class="playlist-video" title="<%$data.title[1]%>">
+
+										</li>
+										<li id="video-03" class="playlist-video" title="<%$data.title[2]%>">
+
+										</li>
+										<li id="video-04" class="playlist-video" title="<%$data.title[3]%>">
+
+										</li>
+										<li id="video-05" class="playlist-video" title="<%$data.title[4]%>">
+
+										</li>
+										<li id="video-06" class="playlist-video" title="<%$data.title[5]%>">
+
+										</li>
+										<li id="video-07" class="playlist-video" title="<%$data.title[6]%>">
+
+										</li>
+										<li id="video-08" class="playlist-video" title="<%$data.title[8]%>">
+
+										</li>
+										<li id="video-09" class="playlist-video" title="<%$data.title[9]%>">
+
+										</li>
+										<li id="video-10" class="playlist-video" title="<%$data.title[10]%>">
+
+										</li>
+										<li id="video-10" class="playlist-video" title="<%$data.title[11]%>">
+
+										</li>
+										<li id="video-10" class="playlist-video" title="<%$data.title[12]%>">
+
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="playlist-main-prev">
+					aaa
+					</div>
+					<div id="playlist-main-next">
+					aaa
+					</div>
+				</div>
+				<!--no footer-->
+			</div>
+
+			<script type="text/javascript">
+				var W = QW.NodeW, g = Dom.g;
+				W("#playlist-bar-nav").on("click", function(){
+					W("#playlist-bar-main").slideToggle(300);
+
+					var el = W("#playlist-bar");
+					if(el.hasClass("playlist-bar-show")){
+						el.replaceClass("playlist-bar-show","playlist-bar-hide");
+					}else{
+						el.replaceClass("playlist-bar-hide","playlist-bar-show");
+					}
+				});
+				W("#playlist-button-prev").on("click", function(evt){
+					alert("上一集");
+					evt.stopPropagation();
+				});
+				W("#playlist-button-next").on("click", function(evt){
+					alert("下一集");
+					evt.stopPropagation();
+				});
+
+				W("#playlist-button-option").on("click", function(evt){
+					W("#playlist-extra-menu").fadeToggle(300);
+					evt.stopPropagation();
+				});
+
+				W("#playlist-button-autoplay").on("click", function(evt){
+					var el = W("#playlist-bar");
+					
+					if(el.hasClass("playlist-autoplay-off")){
+						el.replaceClass("playlist-autoplay-off","playlist-autoplay-on");
+						alert("自动播放");
+					}else{
+						el.replaceClass("playlist-autoplay-on","playlist-autoplay-off");
+						alert("取消自动播放");
+					}
+					evt.stopPropagation();
+				});
+
+				W("#playlist-button-random").on("click", function(evt){
+					var el = W("#playlist-bar");
+					
+					if(el.hasClass("playlist-random-off")){
+						el.replaceClass("playlist-random-off","playlist-random-on");
+						alert("随机播放");
+					}else{
+						el.replaceClass("playlist-random-on","playlist-random-off");
+						alert("取消随机播放");
+					}
+					evt.stopPropagation();
+				});
+
+				W("#playlist-videolist .playlist-video").on("mouseover", function(evt){
+					W(this).addClass("playlist-video-hover");
+					W("#playlist-videolist-title").setHtml(W(this).attr("title"));
+
+				}).on("mouseout", function(evt){
+					W(this).removeClass("playlist-video-hover");
+					var el = W("#playlist-videolist .playlist-video-selected");
+					W("#playlist-videolist-title").setHtml(el.attr("title"));
+				}).on("click", function(evt){
+					W("#playlist-videolist .playlist-video-selected").removeClass("playlist-video-selected");
+					W(this).addClass("playlist-video-selected");
+				});
+
+				W("#playlist-main-next, #playlist-main-prev").on("click", function(){
+					var _scroller = W("#playlist-videolist-scroller");
+					var _body = W("#playlist-videolist-body");
+					var _door = W("#playlist-main-current");
+					var _vedio = W(".playlist-video");
+					
+					var maxWidth = parseInt(_body.get("offsetWidth")) || 0; //实际内容的宽度
+					var doorWidth = parseInt(_door.get("offsetWidth")) || 0; //实际窗口的宽度
+					var vedioWidth = parseInt(_vedio.get("offsetWidth")) || 0; 
+					vedioWidth += 10;  //包括Padding
+					doorWidth -= 70; //减去两边空白的宽度
+					maxWidth -= 70;
+
+					var n = Math.floor(doorWidth / vedioWidth); //一屏共有几个完整的video
+					var scrollDis = n * vedioWidth;
+
+					var scrollPos = _scroller.attr("scrollLeft");
+					//alert([scrollPos, scrollDis,maxWidth]);
+						
+					var id = this.id;
+
+					if("playlist-main-next" == id && scrollPos + scrollDis < maxWidth){
+						var anim = new ElAnim(_scroller, {
+							"scrollLeft" : {
+								by : scrollDis
+							}
+						}, 500, function(p, d){
+							return -d/2 * (Math.cos(Math.PI*p) - 1);
+						});
+						anim.start();
+					}else if("playlist-main-prev" == id && scrollPos > -0){
+						var anim = new ElAnim(_scroller, {
+							"scrollLeft" : {
+								by : -scrollDis
+							}
+						}, 500, function(p, d){
+							return -d/2 * (Math.cos(Math.PI*p) - 1);
+						});
+						anim.start();
+					}
+				});
+				
+			</script>
+		</div>
+	</body>
+</html>

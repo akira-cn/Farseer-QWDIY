@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+	<title> new document </title>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<base target=_blank></base>
+		<link href="../js/apps/assets/base.css" rel="stylesheet" type="text/css" media="screen"/>
+		<link href="../js/components/combobox/assets/combobox.css" rel="stylesheet" type="text/css" media="screen">
+		<script type="text/javascript" src="../js/apps/core_dom_youa.js"></script>
+		<script type="text/javascript" src="../js/components/combobox/combobox.js"></script>
+		<script type="text/javascript" src="../js/components/timing/timing.base.js"></script>
+	</head>
+
+	<body>
+		<div style="margin-top:45px">
+			<input name="search" style="width:300px" id="searchbar-search"></input>
+			<input type="submit" value="搜索"></input>
+		</div>
+		<script type="text/javascript">
+		(function(){
+			var timing = new Timing(300); //300ms之后请求数据
+
+			var cb=new ComboBox({oText:g("searchbar-search"),
+				onselectitem:function(){},
+				onrefresh:function(){
+					var value = this.oText.value; //数据已经刷新了
+					
+					timing.cancel(); //先结束之前的请求
+					
+					(function(oText){
+						timing.onsucceed = function(){
+							var scritpTag=document.createElement("script");
+							scritpTag.src="http://10.34.7.166/sug?callback=__callback&q="+
+									oText.value.encode4Http();
+							document.getElementsByTagName("head")[0].appendChild(scritpTag);
+						};
+					})(this.oText);
+
+					timing.start();
+				},
+				onclear:function(){
+					timing.cancel();
+				}});
+			
+			window.__callback = function (data){
+				cb.itemsData = data;
+			}
+		})();
+		</script>
+	</body>
+</html>

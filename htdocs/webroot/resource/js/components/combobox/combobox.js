@@ -33,7 +33,8 @@
 		if (!this.lazyRender) this.render();
 	}
 
-	ComboBox.EVENTS = ["enter", "selectitem"];
+	ComboBox.EVENTS = ["enter", "selectitem", "clear", "refresh"];
+	//当过滤值存在且数据被清除到足够短的时候，将触发clear事件
 
 	ComboBox.prototype = {
 /*
@@ -43,7 +44,7 @@
 		oText: null,
 		//text-input对象
 		itemsData: null,
-		//items数据，array，需要在refreshData方法里进行设值
+		//items数据，array，需要在refresh事件里进行设值
 		minFilterLen: 1,
 		//最小filter长度。当oText.value不小于此值时，才会有suggest效果
 /*
@@ -105,9 +106,6 @@
 				me.selectedIndex = -1;
 				data.__isItemsDataRendered = true;
 			}
-		},
-		refreshData: function() {
-			this.itemsData = ["refreshData一定要重写！"];
 		},
 		setSelectedIndex: function(idx, needBlur) {
 			var me = this;
@@ -203,13 +201,16 @@
 				me._refreshTimer = setInterval(function() {
 					var val = oText.value;
 					if (val.length < me.minFilterLen) {
+						if(me.acValue || me.filteringValue || me.filteredValue){
+							me.fire("clear"); //触发一个clear动作
+						}
 						me.acValue = me.filteringValue = me.filteredValue = "";
 						me.hide();
 						me.closed = false; //吸收google suggest的策略：如果suggest被关闭，用户将oText清空，这时会将suggest打开。
 					} else if (!me.closed) {
 						if (val != me.filteredValue && val != me.filteringValue && val != me.acValue) {
 							me.filteringValue = val;
-							me.refreshData();
+							me.fire("refresh");
 						}
 						if (me.itemsData) {
 							me.refreshItems();
