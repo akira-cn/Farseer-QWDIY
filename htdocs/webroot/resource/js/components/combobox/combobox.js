@@ -43,7 +43,7 @@
 		width: 0,
 		oText: null,
 		//text-input对象
-		itemsData: null,
+		_itemsData: null,
 		//items数据，array，需要在refresh事件里进行设值
 		minFilterLen: 1,
 		//最小filter长度。当oText.value不小于此值时，才会有suggest效果
@@ -82,10 +82,13 @@
 		hide: function() {
 			this.oWrap.style.display = "none";
 		},
+		setItems: function(data){
+			this._itemsData = data.slice(0);
+		},
 		refreshItems: function() {
 			var me = this;
-			var data = me.itemsData;
-			if (data && !data.__isItemsDataRendered) { //加上属性“__isItemsDataRendered”以标志data是否已经render成html
+			var data = me._itemsData;
+			if (data && !data.__isRendered) { //加上属性“__isRendered”以标志data是否已经render成html
 				var html = [];
 				for (var i = 0; i < data.length; i++) {
 					var dataType = data[i].constructor;
@@ -104,7 +107,7 @@
 				me.filteredValue = me.filteringValue;
 				me.acValue = "";
 				me.selectedIndex = -1;
-				data.__isItemsDataRendered = true;
+				data.__isRendered = true;
 			}
 		},
 		setSelectedIndex: function(idx, needBlur) {
@@ -114,7 +117,7 @@
 				if (me.selectedIndex > -1) removeClass(rows[me.selectedIndex], "selected");
 				idx = (idx + rows.length + 1) % (rows.length + 1);
 				if (idx == rows.length) {
-					me.acValue = me.oText.value = me.filteringValue; //这里用filteringValue，而不用filteredValue，是因为有时itemsData是静态的（例如，不用过滤功能的单纯ComboBox）
+					me.acValue = me.oText.value = me.filteringValue; //这里用filteringValue，而不用filteredValue，是因为有时_itemsData是静态的（例如，不用过滤功能的单纯ComboBox）
 					idx = -1;
 				} else {
 					me.acValue = me.oText.value = rows[idx].getAttribute("acValue");
@@ -212,7 +215,7 @@
 							me.filteringValue = val;
 							me.fire("refresh");
 						}
-						if (me.itemsData) {
+						if (me._itemsData) {
 							me.refreshItems();
 						}
 					}

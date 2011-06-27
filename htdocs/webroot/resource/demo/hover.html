@@ -1,0 +1,24 @@
+<script src="../js/apps/core_dom_youa.js"></script>
+<style type="text/css">
+	.a {
+		background:#000;
+		color:#fff;
+	}
+	.b {
+		background:#fff;
+		color:#000;
+	}
+</style>
+<body>
+<div class="a">test</div>
+<div class="a">test</div>
+</body>
+<script>
+	W("body").delegate(".a","mouseover", function(){
+		W(this).addClass("b");
+	}).delegate(".a","mouseout", function(){
+		W(this).removeClass("b");
+	});
+
+
+</script>
