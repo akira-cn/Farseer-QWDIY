@@ -732,7 +732,6 @@ class Kohana_Response implements HTTP_Response, Serializable {
 		$output = $this->_protocol.' '.$this->_status.' '.Response::$messages[$this->_status]."\n";
 		$output .= (string) $this->_header;
 		$output .= $this->_body;
-
 		return $output;
 	}
 

@@ -107,7 +107,9 @@ Kohana::modules(array(
 	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	'smarty' => MODPATH.'smarty',
+	'smarty'	 => MODPATH.'smarty',
+	'jsonp'		 => MODPATH.'jsonp',	  //add $this->response->json & $this->response->jsonp
+	'csrf'		 => MODPATH.'csrf',		  //csrf protection
 	));
 
 /**
