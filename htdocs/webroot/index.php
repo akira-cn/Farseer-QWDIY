@@ -11,6 +11,7 @@ if (! isset($arrUrl[1])) {
 }
 $strModule = $arrUrl[1];
 $strConf = SSI_ROOT_PATH . "/{$strModule}/index.php";
+
 if (! file_exists($strConf)) {
 	//$strModule的合法值[A-Za-z0-9_\-]，且必须真实存在
 	echo 'Access Deny! '.$strConf;

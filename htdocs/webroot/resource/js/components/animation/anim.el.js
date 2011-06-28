@@ -23,7 +23,12 @@
 			return getStyle(this.el, this.attr);
 		},
 		getUnits : function(attr){
-			return this.units ? this.units : this.getValue().toString().replace(/^[+-]?[\d\.]+/g,'');
+			if(this.units) return this.units;
+			
+			var value = this.getValue();
+			if(value)
+				return value.toString().replace(/^[+-]?[\d\.]+/g,'');
+			return '';
 		},
 		init : function(){ //初始化数据
 			var from, to, by, units;
@@ -55,7 +60,12 @@
 
 	mix(RectAgent.prototype, {
 		getUnits : function(attr){
-			return this.units ? this.units : (this.getValue().toString().replace(/^[+-]?[\d\.]+/g,'') || 'px');
+			if(this.units) return this.units;
+			
+			var value = this.getValue();
+			if(value)
+				return value.toString().replace(/^[+-]?[\d\.]+/g,'');
+			return 'px';
 		}	
 	}, true);
 
@@ -227,6 +237,7 @@
 	var ElAnim = extend(
 		function(el, opts, dur, easing){
 			el = g(el);
+
 			if(!isElement(el)) 
 				throw new Error(['Animation','Initialize Error','Element Not Found!']);
 

@@ -192,7 +192,7 @@
 	//示例10：随机测试
 	var cb10=new ComboBox({oText:g("randomTest"),
 		onselectitem:function(){document.title=("您选中的selectedIndex是:"+this.selectedIndex+"\n其数据为："+this.itemsData[this.selectedIndex])},
-		refreshData:function(){
+		onrefresh:function(){
 			var ar=[];
 			for(var i=0;i<10;i++) {
 				if(Math.random()<0.2) break;

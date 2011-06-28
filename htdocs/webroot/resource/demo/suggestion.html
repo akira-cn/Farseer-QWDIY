@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+	<title> new document </title>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<base target=_blank></base>
+		<link href="../js/apps/assets/base.css" rel="stylesheet" type="text/css" media="screen"/>
+		<link href="../js/components/combobox/assets/combobox.css" rel="stylesheet" type="text/css" media="screen">
+		<script type="text/javascript" src="../js/apps/core_dom_youa.js"></script>
+		<script type="text/javascript" src="../js/components/combobox/combobox.js"></script>
+		<script type="text/javascript" src="../js/components/timing/timing.base.js"></script>
+	</head>
+
+	<body>
+		<div style="margin-top:45px">
+			<input name="search" style="width:300px" id="searchbar-search"></input>
+			<input type="submit" value="搜索"></input>
+		</div>
+		<script type="text/javascript">
+		(function(){
+			//100ms之后请求数据
+			//如果100ms内搜索框输入值变了（例如用户快速输入）
+			//请求将被取消，以节省带宽
+			//这个时间可以调整
+			var timing = new Timing(100); 
+
+			var buffer = {}; //缓存用户搜索过的结果
+
+			var cb=new ComboBox({oText:g("searchbar-search"),
+				onselectitem:function(){},
+				onrefresh:function(){
+					timing.cancel(); //先结束之前的请求（如果请求还没发出去）
+					
+					(function(query, callbackName){
+						timing.onsucceed = function(){ //Timing延时完成之后
+							if(buffer[query]){ //buffer hit
+								cb.setItems(buffer[query]);
+								return;
+							}
+							var scritpTag=document.createElement("script");
+							scritpTag.src="http://10.34.7.166/sug?callback="+callbackName+"&q="+
+									query.encode4Http();
+							document.getElementsByTagName("head")[0].appendChild(scritpTag);
+						};
+
+						window[callbackName] = function(data){
+							cb.setItems(data); //这里必须用setItems，直接赋值__itemsData会污染data
+							buffer[query] = data;
+							delete window[callbackName];
+						};
+					})(this.oText.value,"_"+new Date().getTime());
+
+					timing.start();
+				},
+				onclear:function(){
+					timing.cancel();
+				}});
+		})();
+		</script>
+	</body>
+</html>

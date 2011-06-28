@@ -82,6 +82,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  */
 Kohana::init(array(
 	'base_url'   => '/kohanademo',
+	'index_file' => FALSE,
 ));
 
 /**
@@ -105,7 +106,10 @@ Kohana::modules(array(
 	// 'image'      => MODPATH.'image',      // Image manipulation
 	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+	'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+	'smarty'	 => MODPATH.'smarty',
+	'jsonp'		 => MODPATH.'jsonp',	  //add $this->response->json & $this->response->jsonp
+	'csrf'		 => MODPATH.'csrf',		  //csrf protection
 	));
 
 /**

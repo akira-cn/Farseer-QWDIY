@@ -28,7 +28,7 @@
 			if (el.indexOf('<') == 0) {return DomU.create(el, false, doc); }
 			return (doc || document).getElementById(el);
 		} else {
-			return (ObjectH.isWrap(el)) ? arguments.callee(el.core) : el;
+			return (ObjectH.isWrap(el)) ? arguments.callee(el[0]) : el; //如果NodeW是数组的话，返回第一个元素(modified by akira)
 		}
 	};
 

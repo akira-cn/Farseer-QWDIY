@@ -33,7 +33,8 @@
 		if (!this.lazyRender) this.render();
 	}
 
-	ComboBox.EVENTS = ["enter", "selectitem"];
+	ComboBox.EVENTS = ["enter", "selectitem", "clear", "refresh"];
+	//当过滤值存在且数据被清除到足够短的时候，将触发clear事件
 
 	ComboBox.prototype = {
 /*
@@ -42,8 +43,8 @@
 		width: 0,
 		oText: null,
 		//text-input对象
-		itemsData: null,
-		//items数据，array，需要在refreshData方法里进行设值
+		_itemsData: null,
+		//items数据，array，需要在refresh事件里进行设值
 		minFilterLen: 1,
 		//最小filter长度。当oText.value不小于此值时，才会有suggest效果
 /*
@@ -81,10 +82,13 @@
 		hide: function() {
 			this.oWrap.style.display = "none";
 		},
+		setItems: function(data){
+			this._itemsData = data.slice(0);
+		},
 		refreshItems: function() {
 			var me = this;
-			var data = me.itemsData;
-			if (data && !data.__isItemsDataRendered) { //加上属性“__isItemsDataRendered”以标志data是否已经render成html
+			var data = me._itemsData;
+			if (data && !data.__isRendered) { //加上属性“__isRendered”以标志data是否已经render成html
 				var html = [];
 				for (var i = 0; i < data.length; i++) {
 					var dataType = data[i].constructor;
@@ -103,11 +107,8 @@
 				me.filteredValue = me.filteringValue;
 				me.acValue = "";
 				me.selectedIndex = -1;
-				data.__isItemsDataRendered = true;
+				data.__isRendered = true;
 			}
-		},
-		refreshData: function() {
-			this.itemsData = ["refreshData一定要重写！"];
 		},
 		setSelectedIndex: function(idx, needBlur) {
 			var me = this;
@@ -116,7 +117,7 @@
 				if (me.selectedIndex > -1) removeClass(rows[me.selectedIndex], "selected");
 				idx = (idx + rows.length + 1) % (rows.length + 1);
 				if (idx == rows.length) {
-					me.acValue = me.oText.value = me.filteringValue; //这里用filteringValue，而不用filteredValue，是因为有时itemsData是静态的（例如，不用过滤功能的单纯ComboBox）
+					me.acValue = me.oText.value = me.filteringValue; //这里用filteringValue，而不用filteredValue，是因为有时_itemsData是静态的（例如，不用过滤功能的单纯ComboBox）
 					idx = -1;
 				} else {
 					me.acValue = me.oText.value = rows[idx].getAttribute("acValue");
@@ -203,15 +204,18 @@
 				me._refreshTimer = setInterval(function() {
 					var val = oText.value;
 					if (val.length < me.minFilterLen) {
+						if(me.acValue || me.filteringValue || me.filteredValue){
+							me.fire("clear"); //触发一个clear动作
+						}
 						me.acValue = me.filteringValue = me.filteredValue = "";
 						me.hide();
 						me.closed = false; //吸收google suggest的策略：如果suggest被关闭，用户将oText清空，这时会将suggest打开。
 					} else if (!me.closed) {
 						if (val != me.filteredValue && val != me.filteringValue && val != me.acValue) {
 							me.filteringValue = val;
-							me.refreshData();
+							me.fire("refresh");
 						}
-						if (me.itemsData) {
+						if (me._itemsData) {
 							me.refreshItems();
 						}
 					}

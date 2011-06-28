@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+	<head>
+	<title> new document </title>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<base target=_blank></base>
+		<script type="text/javascript" src="../../../apps/core_dom_youa.js"></script>
+		<script type="text/javascript" src="../timing.base.js"></script>
+	</head>
+		
+	<body>
+		<button id="start">start</button>
+		<button id="cancel">cancel</button>
+		<div id="clock">click to start</div>
+		<script type="text/javascript">
+
+			var clock = W("#clock");
+
+			var timing = new QW.Timing(
+				3000, function(){
+					clock.setHtml("succeed");
+				}
+			);
+
+			timing.on("cancelled",function(){
+				clock.setHtml("canceled");
+			});
+
+			timing.on("beforestart",function(){
+				clock.setHtml("0");
+			});
+
+			timing.on("waiting",function(){
+				
+				clock.setHtml([this.startTime, new Date(), this.dur]);
+			});
+
+			//timing.start();
+
+			W("#cancel").on("click", function(){
+				timing.cancel();
+			});
+			W("#start").on("click", function(){
+				timing.start();
+			});
+		</script>
+	</body>
+</html>
