@@ -1,16 +1,9 @@
-<?php
+<?php defined('SYSPATH') or die('No direct script access.');
 
-// If we're on the CLI then PHPUnit will already be loaded
-if (class_exists('PHPUnit_Util_Filter', FALSE) OR function_exists('phpunit_autoload'))
-{
-	Unittest_Tests::configure_environment();
-
-	// Stop kohana from processing the request
-	define('SUPPRESS_REQUEST', TRUE);
-}
-
-Route::set('unittest', 'unittest(/<action>)')
+// UnitTestController
+Route::set('unittest', 'unittest(/<case>)')
 	->defaults(array(
 		'controller' => 'unittest',
-		'action'     => 'index',
+		'action'     => 'run',
+		'case'     => null,
 	));

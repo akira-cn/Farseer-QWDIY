@@ -19,4 +19,6 @@ if (! file_exists($strConf)) {
 }
 
 define('SSI_APP_NAME', $strModule);
+define('SSI_SRC_PATH', realpath(SSI_ROOT_PATH . '/' . SSI_APP_NAME)); //当前应用的起始目录
+define('SSI_PHP5_PATH', realpath(SSI_ROOT_PATH . '/../php')); //系统的PHP5安装目录
 require $strConf;
